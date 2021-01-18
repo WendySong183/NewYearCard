@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scable=no">
+    <title>预览</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/preview.css">
+    <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+    <section>
+        <div class="cover">
+            <img src="" alt="" class="bg1">
+            <img src="" alt="" class="bg2">
+            <img src="" alt="" class="bg3">
+            <img src="image/erweima.png" alt="" class="bg4">
+            <p class="title"></p>
+        </div>
+        <div class="reverse">
+            
+            <img src="image/xa_1.png" alt="">
+            <div class="show_addressee">收信人</div>
+
+            <div class="show_content">
+                
+                <p class="show_content_p">新年快乐万事如意</p>
+            </div>
+
+            <div class="show_user">发信人</div>
+
+
+        </div>
+    </section>
+    <div class="link">
+        <button class=".btn finish">完成</button>
+        <button class=".btn submit">发送到祝福墙</button>
+    </div>
+    <div><img class="image" src=""/></div>
+    <!-- <div class="btn_ares">
+        <a href="showCover.html" class="btn">完成</a>
+        <a href="#" class="btn">发送到良博祝福墙</a>
+    </div> -->
+    <script>
+        var bg1=document.querySelector('.bg1');
+        var bg2=document.querySelector('.bg2');
+        var bg3=document.querySelector('.bg3');
+        var title=document.querySelector('.title');
+        var recipient=document.querySelector('.show_addressee');
+        var content=document.querySelector('.show_content_p');
+        var sender=document.querySelector('.show_user');
+
+        var arr = location.search.substr(1).split('&');
+        var obj = new Object();
+        for (var i = 0; i < arr.length; i++) {
+            var tmp_arr = arr[i].split('=')
+            obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+
+        }
+        title.innerHTML = obj['title'];
+        recipient.innerHTML = obj['recipient'];
+        content.innerHTML = obj['content'];
+        sender.innerHTML = obj['sender'];
+        bg2.src = 'image/' + obj['selected_bg1'];
+        bg1.src = 'image/' + obj['selected_bg2'];
+        bg3.src = 'image/' + obj['selected_bg3'];
+
+
+        var cover=document.querySelector('.cover');
+        var img = document.querySelector('.image');
+        html2canvas(cover,{
+            scale: 2,
+         }).then(canvas => {
+            document.body.appendChild(canvas)
+            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+            console.log("base64编码数据：", imgUrl);
+            // console.log(canvas.toDataURL('png'));
+            //img.src=canvas.toDataURL();
+            //document.body.appendChild(canvas)
+        });
+    </script>
+</body>
+
+
+</html>

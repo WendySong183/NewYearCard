@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../image/beijing.png) repeat;
+}
+
+li {
+    list-style: none;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    margin: 3% auto 0;
+}
+
+
+/* .pic {
+    width: 300px;
+    height: 532px;
+    margin: 0 auto;
+}
+
+.pic>img {
+    display: none;
+    width: 300px;
+} */
+
+h3 img {
+    width: 40%;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+li {
+    width: 33%;
+    /* height: 160px; */
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+li img {
+    width: 90%;
+    margin: 5%;
+    height: 150px;
+}
+
+
+/* .select>img {
+    border: 3px solid #00c09e;
+    border-radius: 15px;
+} */
+
+li input {
+    /* display: none; */
+    -webkit-appearance: none;
+    border: none;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    width: 90%;
+    height: 90%;
+    /* border: 3px solid #00c09e;
+    border-radius: 15px; */
+    z-index: 1;
+}
+
+input:checked {
+    -webkit-appearance: none;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 95%;
+    border: 4px solid #00c09e;
+    border-radius: 15px;
+}
+
+.selected {
+    border: 5px solid #00c09e;
+}
+
+.link {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.btn {
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+    /* background-color: paleturquoise; */
+    text-align: center;
+    line-height: 40px;
+    margin: 0 auto;
+    /* border: 1px solid #666666; */
+}
+
+.btn img {
+    width: 100%;
+}
