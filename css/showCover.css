@@ -11,12 +11,13 @@
 
 .pic img {
     display: block;
-    width: 100%;
+    width: 375px;
     max-width: 100%;
 }
 
 .blessing {
     height: 80px;
+    background-color: pink;
 }
 
 .blessing img {
@@ -27,7 +28,6 @@
 }
 
 .canvas {
-    display: inline-block;
     width: 82px;
     height: 82px;
     float: right;
@@ -35,4 +35,19 @@
 
 #code {
     display: inline-block;
+}
+
+
+/* .section {
+    display: none;
+} */
+
+.image {
+    width: 375px;
+    height: 667px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: pink;
 }

@@ -30,13 +30,15 @@
     <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
 </body>
 <script>
+    var url = 'https://wendysong183.github.io/NewYearCard/show.html?cardId=' + location.search.substr(1).split('=')[1];
+    console.log(url);
     jQuery('.canvas').qrcode({
         // render: "image",
-        text: "https://wx.weibenh5.com/2020/Dec/yearCard/heka/index.html",
+        text: 'https://wendysong183.github.io/NewYearCard/show.html?cardId=111',
         width: 82,
         height: 82,
-        background: "#3f3243", //二维码的后景色
-        foreground: "transparent", //二维码的前景色
+        // background: "#3f3243", //二维码的后景色
+        // foreground: "transparent", //二维码的前景色
         src: 'wenwu.jpg',
         // correctLevel: QRCode.CorrectLevel.H,
 
@@ -65,16 +67,16 @@
     var cover = document.querySelector('.section');
     var img = document.querySelector('.image');
     var final = document.querySelector('.final');
-    html2canvas(cover, {
-        scale: 2,
-    }).then(canvas => {
-        final.appendChild(canvas)
-        setTimeout(() => {
-            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-            console.log("base64编码数据：", imgUrl);
-        }, 0)
-        img.src = canvas.toDataURL();
-    });
+    // html2canvas(cover, {
+    //     scale: 2,
+    // }).then(canvas => {
+    //     final.appendChild(canvas)
+    //     setTimeout(() => {
+    //         var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+    //         console.log("base64编码数据：", imgUrl);
+    //     }, 0)
+    //     img.src = canvas.toDataURL();
+    // });
     // cover.style.display = 'none';
     // final.style.display = 'none';
 </script>
