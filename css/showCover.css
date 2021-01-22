@@ -1,0 +1,38 @@
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+.pic,
+.blessing {
+    width: 100%;
+}
+
+.pic img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.blessing {
+    height: 80px;
+}
+
+.blessing img {
+    width: 290px;
+    /* float: left; */
+    vertical-align: middle;
+    float: left;
+}
+
+.canvas {
+    display: inline-block;
+    width: 82px;
+    height: 82px;
+    float: right;
+}
+
+#code {
+    display: inline-block;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scable=no">
+    <title>贺卡制作</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/make.css" />
+</head>
+
+<body>
+    <div class="card">
+
+        <h3><img src="image/zhizuoheka.png" alt=""></h3>
+
+
+        <form action="makeReverse.html">
+
+    <!-- title -->
+    <div class="text">
+        <span>请输入标题</span>
+        <input name="title" class='title' type="text" size="50" placeholder="例如：新年快乐" maxlength="20" onkeyup="javascript:setShowLength(this, 20, 'cost_tpl_title_length');" required>
+        <span class="red" id="cost_tpl_title_length">还可以输入20字数</span>
+        <script>
+            function setShowLength(obj, maxlength, id) {
+                var rem = maxlength - obj.value.length;
+                var wid = id;
+                if (rem < 0) {
+                    rem = 0;
+                }
+                document.getElementById(wid).innerHTML = "还可以输入" + rem + "字数";
+            }
+        </script>
+        <!-- <input type="text" name="title" class='title'> -->
+    </div>
+
+    <!-- wenwu  -->
+    <div class="bg1">
+        <p>请选择文物</p>
+        <ul class="wenwu">
+            <li id=1><label for="bg1_1"><img src="image/xa_1.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_1" value="a_1.png" required></li>
+            <li><label for="bg1_2"><img src="image/xa_2.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_2" value="a_2.png" required></li>
+            <li><label for="bg1_3"><img src="image/xa_3.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_3" value="a_3.png" required></li>
+            <li><label for="bg1_4"><img src="image/xa_4.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_4" value="a_4.png" required></li>
+            <li><label for="bg1_5"><img src="image/xa_5.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_5" value="a_5.png" required></li>
+            <li><label for="bg1_6"><img src="image/xa_6.png" alt=""></label><input type="radio" name="selected_bg1" id="bg1_6" value="a_6.png" required></li>
+        </ul>
+    </div>
+    <div class="jianjie 1">
+        玉鸟<br> 瑶山M2：50 <br>长3.2厘米 <br>鸟是良渚文化图像中最丰富的题材，玉器上的神鸟，身体直接同步了神兽的大眼；陶器上的鸟纹及刻画符号更是丰富多彩，有的抽象，有的具象。反山、瑶山一共出土了五件玉鸟，表现的是鸟展翅飞翔时的俯视形象，两翅外张，抬喙收尾，在底面有穿孔，可以缝缀在服饰上。这件玉鸟是其中一件，它出土于墓主人脚端陶器之上，鸟首部分琢刻有神兽像。
+    </div>
+    <div class="jianjie 2">
+        龙首纹玉圆牌<br> 反山M22：26-1 <br>外径4.7-5.4厘米不等<br> 龙首纹玉器源自崧泽文化晚期，年代集中于良渚文化早期，器型包括璜、镯、管、锥形器等。龙首纹和神兽纹在结构和元素上关系密切。不过，到良渚文化早期晚段，龙首纹消失不见，神人兽面像成为良渚玉器的唯一母题。 成组圆牌是反山、瑶山发掘时根据出土状况和器物形态命名的，由多数钻系孔的小璧环和玦式圆牌组成。仅瑶山M1、M4、M11，反山M22、M23出土，均为女性墓葬。 这块龙首纹玉圆牌是一组6件中的一个，每件都雕琢有龙首纹两组，出土时它们纵向分布于墓主人胸腹部的位置，应为该部位的饰件。
+
+    </div>
+    <div class="jianjie 3">
+        玉三叉型器<br> 瑶山M7：26<br> 高4.8厘米<br> 三叉型器与冠状器、成组锥形器、半圆形器一样，都是是良渚贵族的头饰。三叉型器仅出土于男性贵族大墓的头部位置，一般每墓仅一件，形制独特，组装方式复杂。反山、瑶山共出土三叉型器13件，其中5件琢刻神人兽面纹。 这是其中一件，正面雕琢神像，神人一分为二位于左右两叉的上部，神兽位于正中，中叉部位也就是神兽图像的上方，雕琢羽毛状纹饰。出土时有玉长管配伍，位于中叉的上方玉长管高7.3厘米。
+
+    </div>
+    <div class="jianjie 4">
+        玉璜<br>反山M23：67 <br>高5.75厘米<br> 璜的起源和发展主要在长江下游地区，琮六七千年前马家浜文化时期的条形璜，到五六千年前崧泽文化的片状大璜，再发展到良渚早期的半璧形璜。璜、纺轮等主要随葬于女性墓葬，具有鲜明的性别特征。 这是一件良渚半璧形璜，正面微弧凸，以减地浅浮雕的手法，雕琢神兽和两侧的鸟纹，纹饰极为简略，并无细节刻画。神兽嘴巴呈“V”形，较为少见。
+
+    </div>
+    <div class="jianjie 5">
+        玉琮式管<br> 反山M20：87<br> 高3.47厘米<br> 琮是良渚玉器的重中之重。管、锥形器、柱形器有时也仿照琮的形态，统称琮式玉器。其中，琮式管又称小琮，与琮的结构保持一致，多与玉管共出，有的位于串饰的中间，有的作为玉钺杖的配伍。这件小琮四角刻有共12组简化版的神人兽面纹，此外还有弦纹、螺旋纹装饰，线条刻画精细，是同类中的精品。
+    </div>
+    <div class="jianjie 6">
+        玉鱼<br> 反山M22：23<br> 长4.83厘米 <br>反山、瑶山目前发现有四种动物造型（鸟、鱼、蝉、龟）共计八件圆雕玉器。这是玉鱼，它的头部微凸起，刻画眼部，拱背收腹，鱼鳍分叉并刻有斜向细线。鱼腹部位对钻有两个系挂小孔，推测是缝缀于织物上的饰件。
+
+    </div>
+    <div class="bg2">
+        <span>请选择边框</span>
+        <ul>
+            <li><label for="bg2_1"><img src="image/xb_1.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_1" value="b_1.png" required></li>
+            <li><label for="bg2_2"><img src="image/xb_2.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_2" value="b_2.png" required></li>
+            <li><label for="bg2_3"><img src="image/xb_3.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_3" value="b_3.png" required></li>
+            <li><label for="bg2_4"><img src="image/xb_4.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_4" value="b_4.png" required></li>
+            <li><label for="bg2_5"><img src="image/xb_5.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_5" value="b_5.png" required></li>
+            <li><label for="bg2_6"><img src="image/xb_6.png" alt=""></label><input type="radio" name="selected_bg2" id="bg2_6" value="b_6.png" required></li>
+        </ul>
+    </div>
+    <div class="bg3">
+        <span>请选择邮戳</span>
+        <ul>
+            <li><label for="bg3_1"><img src="image/xc_1.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_1" value="c_1.png" required></li>
+            <li><label for="bg3_2"><img src="image/xc_2.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_2" value="c_2.png" required></li>
+            <li><label for="bg3_3"><img src="image/xc_3.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_3" value="c_3.png" required></li>
+        </ul>
+    </div>
+
+    <div class="link">
+        <input type="submit" value="" class="button">
+
+    </div>
+
+    </form>
+    </div>
+    <script>
+        var wenwu = document.querySelector('.wenwu');
+        var jianjie = document.querySelectorAll('.jianjie');
+        wenwu.addEventListener('click', function(e) {
+            // e.stopPropagation();
+            // console.log(e.target.id.split('_')[1]);
+            var wwId = e.target.id.split('_')[1];
+            console.log(wwId);
+            console.log(jianjie.length);
+
+            for (var i = 0; i < jianjie.length; i++) {
+                // console.log(jianjie[wwId]);
+
+                jianjie[i].style.display = 'none';
+            }
+            jianjie[wwId - 1].style.display = 'block';
+
+
+
+        })
+    </script>
+</body>
+
+</html>

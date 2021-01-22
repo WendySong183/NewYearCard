@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../image/beijing.png) repeat;
+    font-family: Microsoft YaHei;
+}
+
+li {
+    list-style: none;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    margin: 3% auto 0;
+}
+
+h3 img {
+    width: 40%;
+}
+
+.title {
+    display: block;
+    width: 100%;
+    margin: 3% 0;
+    background-color: #bd9d63;
+}
+
+form {
+    margin: 3%;
+}
+
+input {
+    outline: none;
+    height: 10%;
+}
+
+.red {
+    font-size: small;
+    color: rgb(252, 5, 5);
+    padding: 5px;
+    float: right;
+}
+
+.bg1,
+.bg2,
+.bg3 {
+    margin: 8% 0;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 3% 0;
+}
+
+li {
+    width: 33%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+li img {
+    width: 90%;
+    margin-bottom: 5%;
+}
+
+
+/* .select>img {
+    border: 3px solid #00c09e;
+    border-radius: 15px;
+} */
+
+li input {
+    /* display: none; */
+    -webkit-appearance: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 90%;
+    height: 90%; */
+    /* border: 3px solid #00c09e;
+    border-radius: 15px; */
+    z-index: 1;
+}
+
+input:checked {
+    -webkit-appearance: none;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #00c09e;
+    border-radius: 15px;
+}
+
+
+/* .bg3 img {
+    height: 30px;
+    width: 100%;
+} */
+
+.link {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 0;
+}
+
+.button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background: url(../image/xiayibu.png) no-repeat;
+    text-align: center;
+    /* line-height: 40px; */
+    margin: 0 auto;
+    border: none;
+}
+
+.jianjie {
+    display: none;
+}

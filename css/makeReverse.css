@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../image/beijing.png) repeat;
+}
+
+
+/* 标题 */
+
+h3 {
+    width: 100%;
+    text-align: center;
+    margin: 3% auto 0;
+}
+
+h3 img {
+    width: 40%;
+}
+
+
+/* 继承 */
+
+.inherit input {
+    display: none;
+}
+
+.inherit {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.inherit img {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 50%;
+}
+
+.introduce {
+    width: 40%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #666666;
+    z-index: 1;
+}
+
+.inherit .postmark {
+    top: -15%;
+    left: 55%;
+}
+
+
+/* 祝福显示 */
+
+.section {
+    /* display: flex;
+    flex-direction: row; */
+    margin: 8% 5% 0;
+    width: 90%;
+}
+
+.section div {
+    margin-right: 20px;
+}
+
+.row {
+    height: 40px;
+    border-bottom: 1px solid #666666;
+}
+
+
+/* 输入祝福 */
+
+input::placeholder {
+    color: #666666;
+}
+
+textarea {
+    resize: none;
+    text-decoration: solid;
+    outline: none;
+    background: transparent;
+    border: none;
+    /* border: 1px solid #000000; */
+    position: absolute;
+    top: 280px;
+    left: 5%;
+    width: 90%;
+    height: 160px;
+    line-height: 40px;
+    font-size: 36px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+/* .btn_area {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+} */
+
+
+/* 选择邮戳 */
+
+.bg3 {
+    margin: 8% 5% 0;
+}
+
+ul {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    width: 100%;
+    margin: 3% 0;
+}
+
+li {
+    list-style: none;
+    width: 33%;
+    /* border: 1px solid red; */
+    position: relative;
+}
+
+li img {
+    width: 90%;
+    /* margin-bottom: 5%; */
+}
+
+
+/* .select>img {
+    border: 3px solid #00c09e;
+    border-radius: 15px;
+} */
+
+li input {
+    /* display: none; */
+    -webkit-appearance: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 90%;
+    height: 90%; */
+    /* border: 3px solid #00c09e;
+    border-radius: 15px; */
+    z-index: 1;
+}
+
+li input:checked {
+    -webkit-appearance: none;
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #00c09e;
+    border-radius: 15px;
+}
+
+
+/* 动画 */
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 1;
+    }
+    /*结束状态 透明度为1*/
+}
+
+
+/* 按钮 */
+
+.button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background: url(../image/xiayibu.png) no-repeat;
+    text-align: center;
+    /* line-height: 40px; */
+    margin: 0 auto;
+    border: none;
+}
+
+.link {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+
+/* lianjie */
+
+.link {
+    width: 100%;
+    margin: 5% auto 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+label {
+    margin: 0 auto;
+}
+
+button {
+    z-index: 5;
+    width: 40%;
+    height: 50px;
+    margin: 5% auto 0;
+    border-radius: 10px;
+    background-color: rgba(149, 90, 88, .5);
+    border: none;
+    text-align: center;
+    line-height: 20%;
+    color: #ffffff;
+}
