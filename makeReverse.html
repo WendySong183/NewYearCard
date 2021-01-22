@@ -125,23 +125,23 @@
 
 
     // 选择加动画
-    var selected = document.getElementsByName("selected_bg3");
-    var bg3 = document.querySelector('.bg3');
-    bg3.addEventListener('click', function() {
-        for (var i = 0; i < selected.length; i++) {
-            if (selected[i].checked) {
-                postmark.src = 'image/x' + selected[i].value;
-                console.log(postmark.src.split('.')[0].split('_')[1]);
+    // var selected = document.getElementsByName("selected_bg3");
+    // var bg3 = document.querySelector('.bg3');
+    // bg3.addEventListener('click', function() {
+    //     for (var i = 0; i < selected.length; i++) {
+    //         if (selected[i].checked) {
+    //             postmark.src = 'image/x' + selected[i].value;
+    //             console.log(postmark.src.split('.')[0].split('_')[1]);
 
-                postmark.style.animation = 'fadein 1.5s';
-                postmark.addEventListener("animationend", function() {
-                    $(this).css("animation", "");
-                })
+    //             postmark.style.animation = 'fadein 1.5s';
+    //             postmark.addEventListener("animationend", function() {
+    //                 $(this).css("animation", "");
+    //             })
 
 
-            }
-        }
-    })
+    //         }
+    //     }
+    // })
 
     // 提交到服务器
     $(document).ready(function() {
