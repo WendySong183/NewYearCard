@@ -43,11 +43,19 @@
 } */
 
 .image {
-    width: 375px;
-    height: 667px;
+    width: 320px;
+    height: 568px;
     z-index: 1;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     background-color: pink;
+    transform: translateX(-50%);
+}
+
+.alt {
+    position: absolute;
+    top: 575px;
+    text-align: center;
+    width: 100%;
 }
