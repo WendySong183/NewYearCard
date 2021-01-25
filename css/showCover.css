@@ -6,30 +6,30 @@
 
 .pic,
 .blessing {
-    width: 100%;
+    width: 320px;
 }
 
 .pic img {
     display: block;
-    width: 375px;
-    max-width: 100%;
+    width: 320px;
+    /* max-width: 100%; */
 }
 
 .blessing {
-    height: 80px;
+    height: 60px;
     background-color: pink;
 }
 
 .blessing img {
-    width: 290px;
+    width: 260px;
     /* float: left; */
     vertical-align: middle;
     float: left;
 }
 
 .canvas {
-    width: 82px;
-    height: 82px;
+    width: 60px;
+    height: 60px;
     float: right;
 }
 
