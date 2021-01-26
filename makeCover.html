@@ -14,82 +14,98 @@
     <script>
         $(function() {
             var flag;
+            var srcOn = 11;
+            var index=0;
+            var map = new Map();
+            map.set("lj",11);
+            map.set("word","light_1");
+             // 文字
+            var wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
+            var wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
             $('.choose li').click(function() {
                 $(this).animate({
                     width: '25%',
                     opacity: 1
                 });
-                var index = $(this).index();
+                index = $(this).index();
                 // 展示
                 $('.show li').eq(index).fadeIn(1000).siblings('li').hide();
-                var srcOn = $('.show li').eq(index).children('img').attr("src").split('.')[0].split('_')[1];
-                console.log(srcOn);
-
-                // 向左
-                $('.left').click(function() {
-                    srcOn--;
-                    console.log('left', srcOn);
-                    if (srcOn % 10 == 0) {
-                        srcOn += 8;
-                    };
-                    if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
-                        flag = 'image/light.png';
-                        // console.log(flag);
-                    } else {
-                        flag = 'image/dark.png';
-                        // console.log(parseInt(srcOn / 10));
-                    }
-
-                    var srcNew = 'image/a_' + srcOn + '.png';
-                    console.log('srcNew', srcNew);
-
-                    $('.show li').eq(index).children('.relic').attr("src", srcNew).fadeIn(1000).siblings('.shade').attr("src", flag)
-                });
-                // 向右
-                $('.right').click(function() {
-                    srcOn++;
-                    if (srcOn % 10 == 9) {
-                        srcOn -= 8;
-                    };
-                    if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
-                        flag = 'image/light.png';
-                    } else {
-                        flag = 'image/dark.png';
-                    }
-                    var srcNew = 'image/a_' + srcOn + '.png';
-                    $('.show li').eq(index).children('.relic').attr("src", srcNew).siblings('.shade').attr("src", flag);
-
-
-                });
-                // 文字
-                var wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
-                var wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
-                $('.show li').eq(index).children('.word').click(function() {
-                    $(this).fadeOut(10)
-                    wordid++;
-                    if (wordid == 10) {
-                        wordid = 0
-                    }
-                    newWord = wordsrc + "_" + wordid + '.png';
-                    $(this).attr("src", newWord).fadeIn(1000)
-
-
-                });
+                srcOn = $('.show li').eq(index).children('img').attr("src").split('.')[0].split('_')[1];
+                //console.log(srcOn);
                 // 选择
                 $(this).siblings().animate({
                     width: '13%',
                     opacity: 0.5
                 });
+
+                // 文字
+                wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
+                wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
                 // console.log($(this).children('.word').attr("id"));
-                console.log($('.word').attr('src'));
+                map.set("lj",srcOn);
+                map.set("word",wordsrc + "_" + wordid + '.png');
             });
 
 
 
+         // 向左
+         $('.left').click(function() {
+            srcOn--;
+            console.log('left', srcOn);
+            if (srcOn % 10 == 0) {
+                srcOn += 8;
+            };
+            if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
+                flag = 'image/light.png';
+                // console.log(flag);
+            } else {
+                flag = 'image/dark.png';
+                // console.log(parseInt(srcOn / 10));
+            }
 
+            var srcNew = 'image/a_' + srcOn + '.png';
+            console.log('srcNew', srcNew);
 
+            $('.show li').eq(index).children('.relic').attr("src", srcNew).fadeIn(1000).siblings('.shade').attr("src", flag)
+            map.set("lj",srcOn);
+        });
+        // 向右
+        $('.right').click(function() {
+            srcOn++;
+            if (srcOn % 10 == 9) {
+                srcOn -= 8;
+            };
+            if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
+                flag = 'image/light.png';
+            } else {
+                flag = 'image/dark.png';
+            }
+            var srcNew = 'image/a_' + srcOn + '.png';
+            $('.show li').eq(index).children('.relic').attr("src", srcNew).siblings('.shade').attr("src", flag);
+            map.set("lj",srcOn);
+        });
+       
+        
+       // $('.show li').eq(index).children('.word').click(function() {
+       $('.word').click(function() {
+            $(this).fadeOut(10)
+            wordid++;
+            if (wordid == 10) {
+                wordid = 0
+            }
+            newWord = wordsrc + "_" + wordid + '.png';
+            console.log(newWord);
+            $(this).attr("src", newWord).fadeIn(1000);
+            map.set("word",newWord);
+        });
 
-        })
+        $('.btn').click(function() {
+            var path= "makeReverse.html"
+            path = path + "?lj=" + map.get("lj")+ "&word=" + map.get("word")
+            window.location.href=path
+            
+        });
+    })
     </script>
 </head>
 
@@ -150,9 +166,9 @@
         </ul>
     </div>
 
-    <a href="makeReverse.html">
-        <div class="btn"><img src="image/next.png"></div>
-    </a>
+
+    <div class="btn"><img src="image/next.png"></div>
+ 
 
 
 </body>
