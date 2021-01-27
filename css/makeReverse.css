@@ -289,7 +289,7 @@ textarea {
     top: 16vh;
     right: 4vw;
     z-index: 4;
-    background: url("n1.png");
+    background: url("../image/n1.png");
     width: 13vw;
     height: 13vw;
     background-size: 100%;
@@ -307,7 +307,7 @@ textarea {
     top: 26vh;
     right: 4vw;
     z-index: 4;
-    background: url("n2.png");
+    background: url("../image/n2.png");
     width: 13vw;
     height: 13vw;
     background-size: 100%;
