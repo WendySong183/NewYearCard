@@ -15,11 +15,11 @@
         $(function() {
             var flag;
             var srcOn = 11;
-            var index=0;
+            var index = 0;
             var map = new Map();
-            map.set("lj",11);
-            map.set("word","light_1");
-             // 文字
+            map.set("lj", 11);
+            map.set("word", "light_1");
+            // 文字
             var wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
             var wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
             $('.choose li').click(function() {
@@ -42,75 +42,75 @@
                 wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
                 wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
                 // console.log($(this).children('.word').attr("id"));
-                map.set("lj",srcOn);
-                map.set("word",wordsrc + "_" + wordid + '.png');
+                map.set("lj", srcOn);
+                map.set("word", wordsrc + "_" + wordid + '.png');
             });
 
 
 
-         // 向左
-         $('.left').click(function() {
-            srcOn--;
-            console.log('left', srcOn);
-            if (srcOn % 10 == 0) {
-                srcOn += 8;
-            };
-            if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
-                flag = 'image/light.png';
-                // console.log(flag);
-            } else {
-                flag = 'image/dark.png';
-                // console.log(parseInt(srcOn / 10));
-            }
+            // 向左
+            $('.left').click(function() {
+                srcOn--;
+                console.log('left', srcOn);
+                if (srcOn % 10 == 0) {
+                    srcOn += 8;
+                };
+                if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
+                    flag = 'image/light.png';
+                    // console.log(flag);
+                } else {
+                    flag = 'image/dark.png';
+                    // console.log(parseInt(srcOn / 10));
+                }
 
-            var srcNew = 'image/a_' + srcOn + '.png';
-            console.log('srcNew', srcNew);
+                var srcNew = 'image/a_' + srcOn + '.png';
+                console.log('srcNew', srcNew);
 
-            $('.show li').eq(index).children('.relic').attr("src", srcNew).fadeIn(1000).siblings('.shade').attr("src", flag)
-            map.set("lj",srcOn);
-        });
-        // 向右
-        $('.right').click(function() {
-            srcOn++;
-            if (srcOn % 10 == 9) {
-                srcOn -= 8;
-            };
-            if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
-                flag = 'image/light.png';
-            } else {
-                flag = 'image/dark.png';
-            }
-            var srcNew = 'image/a_' + srcOn + '.png';
-            $('.show li').eq(index).children('.relic').attr("src", srcNew).siblings('.shade').attr("src", flag);
-            map.set("lj",srcOn);
-        });
-       
-        
-       // $('.show li').eq(index).children('.word').click(function() {
-       $('.word').click(function() {
-            $(this).fadeOut(10)
-            wordid++;
-            if (wordid == 10) {
-                wordid = 0
-            }
-            newWord = wordsrc + "_" + wordid + '.png';
-            console.log(newWord);
-            $(this).attr("src", newWord).fadeIn(1000);
-            map.set("word",newWord);
-        });
+                $('.show li').eq(index).children('.relic').attr("src", srcNew).fadeIn(1000).siblings('.shade').attr("src", flag)
+                map.set("lj", srcOn);
+            });
+            // 向右
+            $('.right').click(function() {
+                srcOn++;
+                if (srcOn % 10 == 9) {
+                    srcOn -= 8;
+                };
+                if (parseInt(srcOn / 10) == 1 || parseInt(srcOn / 10) == 6) {
+                    flag = 'image/light.png';
+                } else {
+                    flag = 'image/dark.png';
+                }
+                var srcNew = 'image/a_' + srcOn + '.png';
+                $('.show li').eq(index).children('.relic').attr("src", srcNew).siblings('.shade').attr("src", flag);
+                map.set("lj", srcOn);
+            });
 
-        $('.btn').click(function() {
-            var path= "makeReverse.html"
-            path = path + "?lj=" + map.get("lj")+ "&word=" + map.get("word")
-            window.location.href=path
-            
-        });
-    })
+
+            // $('.show li').eq(index).children('.word').click(function() {
+            $('.word').click(function() {
+                $(this).fadeOut(10)
+                wordid++;
+                if (wordid == 10) {
+                    wordid = 0
+                }
+                newWord = wordsrc + "_" + wordid + '.png';
+                console.log(newWord);
+                $(this).attr("src", newWord).fadeIn(1000);
+                map.set("word", newWord);
+            });
+
+            $('.btn').click(function() {
+                var path = "makeReverse.html"
+                path = path + "?lj=" + map.get("lj") + "&word=" + map.get("word")
+                window.location.href = path
+
+            });
+        })
     </script>
 </head>
 
 <body>
-    <p>请点击文字以更换祝福</p>
+    <p>点击文字更换祝福</p>
     <div class="show">
         <ul>
             <div class="left">&lt</div>
@@ -168,7 +168,7 @@
 
 
     <div class="btn"><img src="image/next.png"></div>
- 
+
 
 
 </body>

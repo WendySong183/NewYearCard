@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <img src="" alt="" class="image">
+    <img src="" class="image">
 
 
     <div class="section">
@@ -64,7 +64,6 @@
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
                 id: cardId,
-
             },
             function(data, status) {
                 console.log(data, status);
@@ -82,27 +81,26 @@
                 $('.word').attr('src', wordsrc);
                 $('.bless').attr('src', blesssrc);
                 // window.location.reload()
-                html2canvas(cover, {
-                    scale: 2,
-                    width: 320,
-                }).then(canvas => {
-                    final.appendChild(canvas)
-                    setTimeout(() => {
-                        var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-                        console.log("base64编码数据：", imgUrl);
-                    }, 0)
-                    img.src = canvas.toDataURL();
-                });
+                $('.alt').ready(function() {
+                    console.log(1);
+
+                    html2canvas(cover, {
+                        scale: 2,
+                        width: 320,
+                    }).then(canvas => {
+                        final.appendChild(canvas)
+                        setTimeout(() => {
+                            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+                            console.log("base64编码数据：", imgUrl);
+                            img.src = imgUrl;
+                        }, 0)
+                        cover.style.display = 'none';
+                        final.style.display = 'none';
+                    });
+                })
             });
 
     })
-
-
-
-
-
-    cover.style.display = 'none';
-    final.style.display = 'none';
 </script>
 
 </html>
