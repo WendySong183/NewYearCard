@@ -1,81 +1,196 @@
- section {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-     width: 100%;
-     /* background: url(../images/bg.jpg) no-repeat; */
-     font-size: 30px;
- }
- 
- a {
-     text-decoration: none;
-     color: #000;
- }
- 
- .pic {
-     position: fixed;
-     top: 140px;
-     right: 10%;
-     width: 200px;
-     height: 200px;
-     border: 1px solid #666666;
-     /* z-index: 1; */
-     background: #ffffff;
- }
- 
- .show_addressee {
-     width: 80%;
-     height: 50px;
-     line-height: 50px;
-     border: 1px solid #666666;
-     margin: 20px auto;
-     /* background-color: pink; */
- }
- 
- .show_content {
-     width: 80%;
-     height: 450px;
-     /* line-height: 500px; */
-     display: flex;
-     flex-direction: column;
-     /* text-align: center; */
-     /* background-color: skyblue; */
-     margin: 50px auto;
-     border: 1px solid #666666;
- }
- 
- .show_content p {
-     width: 100%;
-     text-indent: 2em;
-     /* margin: 100px; */
- }
- 
- .show_content_p {
-     flex: 1;
-     text-align: center;
-     text-indent: 0em;
-     line-height: 300px;
- }
- 
- .show_user {
-     width: 80%;
-     height: 50px;
-     line-height: 50px;
-     margin: 20px auto;
-     /* background-color: palegreen; */
-     text-align: right;
-     border: 1px solid #666666;
- }
- 
- .btn {
-     display: block;
-     width: 200px;
-     height: 40px;
-     margin: 20px auto;
-     /* border-radius: 20px; */
-     border: 1px solid #666666;
-     /* background-color: paleturquoise; */
-     text-align: center;
-     line-height: 40px;
-     background-color: #efefef;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'LiSu';
+}
+
+body {
+    background: url(../image/bird.png) repeat;
+    background-size: cover;
+}
+
+
+/* 标题 */
+
+.title {
+    /* text-align: center; */
+    color: #a2423fbe;
+    margin: 5% 3% 0;
+    font-size: 14px;
+    font-family: 'STFangsong';
+}
+
+
+/* 加了个盒子 */
+
+.beimian {
+    position: relative;
+    width: 90%;
+    /* height: 530px; */
+    margin: 8% 5%;
+    box-shadow: 2px 2px 8px #333333;
+}
+
+
+/* 继承 */
+
+.inherit input {
+    display: none;
+}
+
+.inherit {
+    position: relative;
+    width: 100%;
+    /* height: 210px; */
+}
+
+
+/* .inherit img {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 50%;
+} */
+
+.cultural {
+    width: 90%;
+    margin: 8% 5% 1%;
+}
+
+.postmark {
+    position: absolute;
+    top: 36%;
+    right: 0%;
+    width: 30%;
+    -webkit-animation: float ease-in-out 1.5s infinite;
+    animation: float ease-in-out 1.5s infinite;
+}
+
+
+/* 祝福显示 */
+
+.section {
+    /* display: flex;
+    flex-direction: row; */
+    position: relative;
+    margin: 2% 10% 0;
+    width: 80%;
+    height: 300px;
+}
+
+.section div {
+    margin-right: 20px;
+}
+
+.row {
+    height: 50px;
+    border-bottom: 1px solid #c19871;
+    line-height: 50px;
+    font-size: 25px;
+    font-family: 'KaiTi';
+}
+
+
+/* 输入祝福 */
+
+input::placeholder {
+    color: #666666;
+}
+
+textarea {
+    resize: none;
+    text-decoration: solid;
+    outline: none;
+    background: transparent;
+    border: none;
+    /* border: 1px solid #000000; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    line-height: 50px;
+    font-size: 25px;
+    font-family: 'KaiTi';
+}
+
+
+/* 动画 */
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    /*初始状态 透明度为0*/
+    40% {
+        opacity: 0;
+    }
+    /*过渡状态 透明度为0*/
+    100% {
+        opacity: 1;
+    }
+    /*结束状态 透明度为1*/
+}
+
+
+/* .link {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+} */
+
+
+/* lianjie */
+
+.link {
+    width: 100%;
+    text-align: center;
+    margin: 3% 0;
+}
+
+.btn {
+    display: block;
+    width: 30%;
+    height: 25px;
+    border: none;
+    margin: 3% 35%;
+    /* position: fixed;
+    top: 85%;
+    left: 36%; */
+    /* border-radius: 8%; */
+}
+
+.btn img {
+    width: 100%;
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

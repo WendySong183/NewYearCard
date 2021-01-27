@@ -21,30 +21,72 @@
 
 
         <ul class="card-list">
-            <li>
-                <img src="image/a_11.png" alt="">
-            </li>
-            <li>
-                <img src="image/a_12.png" alt="">
-            </li>
-            <li>
-                <img src="image/a_13.png" alt="">
-            </li>
-            <li>
-                <img src="image/a_23.png" alt="">
-            </li>
+
 
         </ul>
 
         <div class="link">
             <!-- <input type="submit" value="编辑" class="button">
                 <button class="button">删除</button> -->
-            <div class="btn bianji"><img src="image/chakan.png" alt=""></div>
-            <div class="btn shanchu"><img src="image/shanchu.png" alt=""></div>
+            <div class="btn show"><img src="image/chakan.png" alt=""></div>
+            <div class="btn delete"><img src="image/shanchu.png" alt=""></div>
         </div>
 
 
     </div>
 </body>
+<script>
+    $(function() {
+        var cardList = $(".card-list");
+        var imgId;
+        var liId = 126;
+        $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=userinfo", {
+                // id: cardId,
+            },
+            function(data, status) {
+                console.log(data, status);
+                // var dataID = data.data.id;
+                // console.log(dataID);
+                for (var i = 42; i < data.data.length; i++) {
+
+                    dataID = data.data[i].id;
+
+                    imgId = 'image/a_' + data.data[i].title + '.png';
+                    cardList.append("<li id=" + dataID + "><img src=" + imgId + " ></li>");
+                }
+
+
+                $('li').click(function() {
+                    liId = $(this).attr('id');
+                    $(this).css({
+                        'border': '4px solid #a2433f',
+                        'border-radius': 10,
+                    }).siblings().css('border', 'none')
+
+
+                })
+
+                $('.show').click(function() {
+                    window.location.href = "showCover.html?" + 'cardId=' + liId;
+                })
+                $('.delete').click(function() {
+                    $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=delete", {
+                            id: liId,
+
+                        },
+                        function(data, status) {
+                            console.log(data, status);
+                            window.location.reload();
+                        });
+
+                })
+            }
+
+            // window.location.reload()
+
+        )
+
+    })
+</script>
 
 </html>

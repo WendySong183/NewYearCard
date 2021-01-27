@@ -14,7 +14,7 @@
     <p class="title">点击更换邮戳</p>
 
     <div class="beimian">
-
+        <!-- <img src="image/bgbird.png" alt="" class="bird"> -->
         <div class="inherit">
             <img src="image/b_1.png" alt="" class="cultural">
             <img src="image/xc_1.png" alt="" class="postmark">
@@ -34,7 +34,7 @@
 
         <button class="btn finish"><img src="image/wancheng.png" alt=""></button>
     </div>
-    </div>
+
 
 </body>
 <script>
@@ -55,59 +55,21 @@
     var culturalSrc = 'image/b_' + parseInt(lj / 10) + '.png';
     cultural.src = culturalSrc;
 
-
-    // var culturalID = parseInt(cultural.src.split('.')[0].split('_')[1]);
-    // // console.log(culturalID + 1);
-
-    // // 换一换
-    // var change = document.querySelector('.change');
-    // var i = 0;
-    // postmark.addEventListener('click', function() {
-    //     i++;
-    //     if (i == 4) {
-    //         i = 1;
-    //     }
-    //     console.log('image/xc_' + i + '.png');
-    //     postmark.src = 'image/xc_' + i + '.png';
-    //     postmark.style.animation = 'fadein 1.5s';
-    //     postmark.addEventListener("animationend", function() {
-    //         $(this).css("animation", "");
-    //     })
-
-    // })
-
-
-    // 选择加动画
-    // var selected = document.getElementsByName("selected_bg3");
-    // var bg3 = document.querySelector('.bg3');
-    // bg3.addEventListener('click', function() {
-    //     for (var i = 0; i < selected.length; i++) {
-    //         if (selected[i].checked) {
-    //             postmark.src = 'image/x' + selected[i].value;
-    //             console.log(postmark.src.split('.')[0].split('_')[1]);
-
-    //             postmark.style.animation = 'fadein 1.5s';
-    //             postmark.addEventListener("animationend", function() {
-    //                 $(this).css("animation", "");
-    //             })
-
-
-    //         }
-    //     }
-    // })
-
-
     var postid = 0;
     var postsrc = 'image/xc_1.png';
     $(document).ready(function() {
         // 点击换邮戳
         $('.postmark').click(function() {
             $(this).fadeOut(10)
+
             postid++;
             if (postid == 4) {
                 postid = 1;
             }
+
             postsrc = 'image/xc_' + postid + '.png';
+            console.log(postsrc);
+
             $(this).attr('src', postsrc).fadeIn(1000);
         })
 
@@ -120,9 +82,12 @@
 
 
             var content = textarea.value;
-            console.log(content);
+            if (content == '') {
+                content = '新年快乐';
+            }
+            console.log('c', content);
             var imgUrlId = cultural.src.split('.')[0].split('_')[1] + postmark.src.split('.')[0].split('_')[1];
-            console.log(imgUrlId);
+            // console.log(postsrc);
 
 
 
@@ -133,7 +98,7 @@
                     blessing: word,
                     sender: 's',
                     type: type,
-                    img_url_id: postid,
+                    img_url_id: postsrc,
                 },
                 function(data, status) {
                     console.log(data);

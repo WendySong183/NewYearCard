@@ -7,39 +7,70 @@
     <title>展示（背面）</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/showReverse.css">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.qrcode.min.js"></script>
 </head>
 
 <body>
 
-    <section>
-        <div class="show_addressee">收信人</div>
+    <div class="beimian">
 
-        <div class="show_content">
-            <!-- <img src="" alt="" class="pic"> -->
-            <p>祝您：</p>
-            <p class="show_content_p">新年快乐</p>
+
+        <div class="inherit">
+            <img src="" alt="" class="cultural">
+            <img src="" alt="" class="postmark">
+
         </div>
+        <div class="section">
+            <p class="row"></p>
+            <p class="row"></p>
+            <p class="row"></p>
+            <p class="row"></p>
+            <p class="row"></p>
+        </div>
+    </div>
+    <div class="link">
+        <button class="btn finish"><img src="image/zhizuoheka.png" alt=""></button>
+    </div>
+    <script>
+        var cardId = location.search.substr(1).split('=')[1];
+        var url = 'https://wendysong183.github.io/NewYearCard/show.html?cardId=' + cardId;
+        console.log(url);
 
-        <div class="show_user">发信人</div>
+        $(function() {
+            var culturalId;
+            var postmarkId;
+            var postmarksrc;
+            var content;
+            var rows = document.querySelectorAll('.row');
+            $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
+                    id: cardId,
+                },
+                function(data, status) {
+                    console.log(data, status);
+                    relicId = parseInt(data.data.title / 10);
+                    culturalId = 'image/b_' + relicId + '.png';
+                    postmarksrc = data.data.img_url_id;
+                    content = data.data.content;
+                    console.log(content);
 
-    </section>
-    <a href=makecover.html class="btn">点击制作同款</a>
-    <!-- <script>
-        var showAddressee = document.querySelector('.show_addressee');
-        var showContentP = document.querySelector('.show_content_p');
-        var showUser = document.querySelector('.show_user');
-        console.log(location.search.substr(1));
-        var arr = location.search.substr(1).split('&');
-        var obj = new Object();
-        for (var i = 0; i < arr.length; i++) {
-            var tmp_arr = arr[i].split('=')
-            obj[decodeURIComponent(tmp_arr[0])] = decodeURIComponent(tmp_arr[1]);
+                    $('.cultural').attr('src', culturalId);
+                    $('.postmark').attr('src', postmarksrc);
 
-        }
-        showAddressee.innerHTML = obj['addressee'];
-        showContentP.innerHTML = obj['content'];
-        showUser.innerHTML = obj['user'];
-    </script> -->
+                    text = content.replace(/\+/g, '&nbsp').split('\n');
+                    console.log(text);
+                    for (var i = 0; i < text.length; i++) {
+                        rows[i].innerHTML = text[i].replace(/ /g, '&nbsp');
+                    }
+
+                    // window.location.reload()
+
+                });
+            $('button').click(function() {
+                window.location.href = "makeCover.html"
+            })
+        })
+    </script>
 </body>
 
 </html>

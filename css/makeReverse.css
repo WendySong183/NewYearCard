@@ -6,7 +6,8 @@
 }
 
 body {
-    background: url(../image/bg.png) repeat;
+    background: url(../image/bird.png) repeat;
+    background-size: cover;
 }
 
 
@@ -29,6 +30,12 @@ body {
     /* height: 530px; */
     margin: 2% 5%;
     box-shadow: 2px 2px 8px #333333;
+    /* background: url(../image/bgbird.png) repeat; */
+}
+
+.bird {
+    width: 80%;
+    z-index: -1;
 }
 
 
