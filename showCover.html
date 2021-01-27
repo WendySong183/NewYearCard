@@ -55,6 +55,7 @@
     var final = document.querySelector('.final');
     html2canvas(cover, {
         scale: 2,
+        width: 320,
     }).then(canvas => {
         final.appendChild(canvas)
         setTimeout(() => {

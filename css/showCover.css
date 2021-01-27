@@ -40,6 +40,10 @@
     display: none;
 } */
     
+    .final canvas {
+        width: 320px;
+    }
+    
     .image {
         width: 320px;
         /* height: 568px;s */
