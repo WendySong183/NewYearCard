@@ -23,7 +23,7 @@
             <img src="image/light_1.png" alt="" class="word">
         </div>
         <div class="blessing">
-            <img src="image/d_1.jpg" alt="">
+            <img src="image/d_1.png" alt="" class="bless">
             <div class="canvas"></div>
             <span id="code"></span>
         </div>
@@ -53,17 +53,54 @@
     var cover = document.querySelector('.section');
     var img = document.querySelector('.image');
     var final = document.querySelector('.final');
-    html2canvas(cover, {
-        scale: 2,
-        width: 320,
-    }).then(canvas => {
-        final.appendChild(canvas)
-        setTimeout(() => {
-            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-            console.log("base64编码数据：", imgUrl);
-        }, 0)
-        img.src = canvas.toDataURL();
-    });
+    var relicId = 11;
+    var relicsrc;
+    var wordsrc;
+    var shade;
+    var shadesrc;
+    var blesssrc;
+
+    $(function() {
+
+        $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
+                id: cardId,
+
+            },
+            function(data, status) {
+                console.log(data, status);
+
+
+                relicId = data.data.title;
+                wordsrc = data.data.blessing;
+                relicsrc = 'image/a_' + relicId + '.png';
+                shade = wordsrc.split('/')[1].split('_')[0];
+                shadesrc = 'image/' + shade + '.png';
+                blesssrc = 'image/d_' + parseInt(relicId / 10) + '.png';
+                console.log(shade);
+                $('.relic').attr('src', relicsrc);
+                $('.shade').attr('src', shadesrc);
+                $('.word').attr('src', wordsrc);
+                $('.bless').attr('src', blesssrc);
+                // window.location.reload()
+                html2canvas(cover, {
+                    scale: 2,
+                    width: 320,
+                }).then(canvas => {
+                    final.appendChild(canvas)
+                        // setTimeout(() => {
+                        //     var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+                        //     console.log("base64编码数据：", imgUrl);
+                        // }, 0)
+                        // img.src = canvas.toDataURL();
+                });
+            });
+
+    })
+
+
+
+
+
     cover.style.display = 'none';
     final.style.display = 'none';
 </script>
