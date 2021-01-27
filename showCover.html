@@ -14,19 +14,22 @@
 
 <body>
     <img src="" alt="" class="image">
-    <div class="final">
 
-    </div>
+
     <div class="section">
         <div class="pic">
-            <img src="image/0121_3.png" alt="">
+            <img src="image/a_11.png" alt="" class="relic">
+            <img src="image/light.png" alt="" class="shade">
+            <img src="image/light_1.png" alt="" class="word">
         </div>
         <div class="blessing">
-            <img src="image/0121_2.png" alt="">
+            <img src="image/d_1.jpg" alt="">
             <div class="canvas"></div>
             <span id="code"></span>
         </div>
 
+    </div>
+    <div class="final">
     </div>
     <div class="alt">快快长按贺卡图片，保存贺卡或发送给朋友吧</div>
 </body>
@@ -37,11 +40,15 @@
 
     jQuery('.canvas').qrcode({
         // render: "image",
-        width: 60,
-        height: 60,
-        // background: "#3f3243", //二维码的后景色
+        width: 160,
+        height: 160,
+        background: 'transparent',
+        foreground: "#ae4742",
+        // background: "#ae4742", //二维码的后景色
         // foreground: "transparent", //二维码的前景色
         text: url,
+        scale: 2,
+
     });
     var cover = document.querySelector('.section');
     var img = document.querySelector('.image');
@@ -50,11 +57,11 @@
         scale: 2,
     }).then(canvas => {
         final.appendChild(canvas)
-        setTimeout(() => {
-            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-            console.log("base64编码数据：", imgUrl);
-        }, 0)
-        img.src = canvas.toDataURL();
+            // setTimeout(() => {
+            //     var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+            //     console.log("base64编码数据：", imgUrl);
+            // }, 0)
+            // img.src = canvas.toDataURL();
     });
     cover.style.display = 'none';
     final.style.display = 'none';

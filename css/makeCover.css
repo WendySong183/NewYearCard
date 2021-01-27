@@ -106,21 +106,6 @@ li img {
 
 /* 动画 */
 
-@keyframes fadein {
-    0% {
-        opacity: 0;
-    }
-    /*初始状态 透明度为0*/
-    40% {
-        opacity: 0;
-    }
-    /*过渡状态 透明度为0*/
-    100% {
-        opacity: 1;
-    }
-    /*结束状态 透明度为1*/
-}
-
 .p1_cc {
     /* 字体闪动 */
     font-size: 2.506rem;
@@ -164,4 +149,6 @@ p {
     /* text-align: center; */
     color: #a2423fbe;
     margin: 5% 8% 1%;
+    font-size: 14px;
+    font-family: 'STFangsong';
 }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'LiSu';
 }
 
 body {
@@ -31,28 +32,29 @@ h3 img {
 .inherit {
     position: relative;
     width: 100%;
-    height: 180px;
+    height: 290px;
 }
 
-.inherit img {
+
+/* .inherit img {
     position: absolute;
     top: 15%;
     right: 10%;
     width: 50%;
+} */
+
+.cultural {
+    width: 90%;
+    margin: 8% 5%;
 }
 
-.introduce {
-    width: 40%;
+.postmark {
     position: absolute;
-    bottom: 5%;
-    left: 5%;
-    color: #666666;
-    z-index: 1;
-}
-
-.inherit .postmark {
-    top: -15%;
-    left: 55%;
+    top: 36%;
+    right: 0%;
+    width: 30%;
+    -webkit-animation: float ease-in-out 1.5s infinite;
+    animation: float ease-in-out 1.5s infinite;
 }
 
 
@@ -61,8 +63,8 @@ h3 img {
 .section {
     /* display: flex;
     flex-direction: row; */
-    margin: 8% 5% 0;
-    width: 90%;
+    margin: 1% 10%;
+    width: 80%;
 }
 
 .section div {
@@ -70,8 +72,8 @@ h3 img {
 }
 
 .row {
-    height: 40px;
-    border-bottom: 1px solid #666666;
+    height: 50px;
+    border-bottom: 1px solid #c19871;
 }
 
 
@@ -89,86 +91,13 @@ textarea {
     border: none;
     /* border: 1px solid #000000; */
     position: absolute;
-    top: 280px;
-    left: 5%;
-    width: 90%;
-    height: 160px;
-    line-height: 40px;
-    font-size: 36px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 100%;
-}
-
-
-/* .btn_area {
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 20px;
-} */
-
-
-/* 选择邮戳 */
-
-.bg3 {
-    margin: 8% 5% 0;
-}
-
-ul {
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: space-between;
-    width: 100%;
-    margin: 3% 0;
-}
-
-li {
-    list-style: none;
-    width: 33%;
-    /* border: 1px solid red; */
-    position: relative;
-}
-
-li img {
-    width: 90%;
-    /* margin-bottom: 5%; */
-}
-
-
-/* .select>img {
-    border: 3px solid #00c09e;
-    border-radius: 15px;
-} */
-
-li input {
-    /* display: none; */
-    -webkit-appearance: none;
-    border: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* width: 90%;
-    height: 90%; */
-    /* border: 3px solid #00c09e;
-    border-radius: 15px; */
-    z-index: 1;
-}
-
-li input:checked {
-    -webkit-appearance: none;
-    position: absolute;
-    top: -5%;
-    left: -5%;
-    width: 100%;
-    height: 100%;
-    border: 4px solid #00c09e;
-    border-radius: 15px;
+    top: 44%;
+    left: 10%;
+    width: 80%;
+    height: 250px;
+    line-height: 50px;
+    font-size: 27px;
+    font-family: 'KaiTi';
 }
 
 
@@ -190,49 +119,63 @@ li input:checked {
 }
 
 
-/* 按钮 */
-
-.button {
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    background: url(../image/xiayibu.png) no-repeat;
-    text-align: center;
-    /* line-height: 40px; */
-    margin: 0 auto;
-    border: none;
-}
-
-.link {
-    display: flex;
-    justify-content: space-around;
-    margin: 0;
-}
+/* .link {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+} */
 
 
 /* lianjie */
 
 .link {
     width: 100%;
-    margin: 5% auto 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-label {
-    margin: 0 auto;
-}
-
-button {
-    z-index: 5;
-    width: 40%;
-    height: 50px;
-    margin: 5% auto 0;
-    border-radius: 10px;
-    background-color: rgba(149, 90, 88, .5);
-    border: none;
     text-align: center;
-    line-height: 20%;
-    color: #ffffff;
+    margin: 5% 0;
+}
+
+.btn {
+    display: block;
+    width: 30%;
+    height: 25px;
+    border: none;
+    margin: 5% 35%;
+    /* position: fixed;
+    top: 85%;
+    left: 36%; */
+    /* border-radius: 8%; */
+}
+
+.btn img {
+    width: 100%;
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
 }

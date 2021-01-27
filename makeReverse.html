@@ -11,46 +11,26 @@
 </head>
 
 <body>
-    <h3><img src="image/zhizuoheka.png" alt=""></h3>
-    <div>
 
-        <div class="inherit">
-            <div class="introduce">玉琮式管<br>反山M20：87<br>高3.47厘米
-            </div>
-            <img src="image/xa_1.png" alt="" class="cultural">
-            <img src="image/xc_1.png" alt="" class="postmark">
-            <button class="change">换一换</button>
-            <!-- <input type="text" name="title" id="title">
-            <input type="text" name="selected_bg1" id="selected_bg1">
-            <input type="text" name="selected_bg2" id="selected_bg2">
-            <input type="text" name="selected_bg3" id="selected_bg3"> -->
-        </div>
-        <div class="section">
-            <!-- <div class="section_content">祝福语: </div> -->
-            <p class="row"></p>
-            <p class="row"></p>
-            <p class="row"></p>
-            <p class="row"></p>
-            <!-- <p class="row"></p> -->
-            <textarea name="content" id="" cols="30" rows="5" placeholder="请输入祝福语" required></textarea>
-        </div>
-        <!-- <div class="bg3">
-            <span>请选择邮戳</span>
-            <ul>
-                <li><label for="bg3_1"><img src="image/xc_1.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_1" value="c_1.png" required></li>
-                <li><label for="bg3_2"><img src="image/xc_2.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_2" value="c_2.png" required></li>
-                <li><label for="bg3_3"><img src="image/xc_3.png" alt=""></label><input type="radio" name="selected_bg3" id="bg3_3" value="c_3.png" required></li>
-            </ul>
-        </div> -->
-        <div class="link">
-            <label for="checkbox"><input type="checkbox" id="checkbox" checked>发送到良博祝福墙</label>
+    <div class="inherit">
+        <img src="image/b_1.png" alt="" class="cultural">
+        <img src="image/xc_1.png" alt="" class="postmark">
 
-            <button class="btn finish">完成</button>
-            <!-- <button class=".btn submit">发送到祝福墙</button> -->
-        </div>
-        <!-- <div class="link">
-            <input type="submit" value="" class="button">
-        </div> -->
+    </div>
+    <div class="section">
+        <p class="row"></p>
+        <p class="row"></p>
+        <p class="row"></p>
+        <p class="row"></p>
+        <p class="row"></p>
+        <textarea name="content" id="" cols="30" rows="5" placeholder="请输入祝福(如新年快乐)" value='新年快乐'></textarea>
+    </div>
+
+    <div class="link">
+        <label for="checkbox"><input type="checkbox" id="checkbox" checked>发送到良博祝福墙</label>
+
+        <button class="btn finish"><img src="image/wancheng.png" alt=""></button>
+    </div>
     </div>
 
 </body>
@@ -65,63 +45,33 @@
     // 获取元素
     var cultural = document.querySelector('.cultural');
     var postmark = document.querySelector('.postmark');
-    var introduce = document.querySelector('.introduce');
 
-    var title = obj['title'];
-    var selected_bg1 = obj['selected_bg1'];
-    cultural.src = 'image/x' + obj['selected_bg1'];
-    postmark.src = 'image/x' + obj['selected_bg3'];
-
-    var culturalID = parseInt(cultural.src.split('.')[0].split('_')[1]);
-    // console.log(culturalID + 1);
+    var lj = obj['lj'];
+    var word = obj['word'];
+    console.log(parseInt(lj / 10));
+    var culturalSrc = 'image/b_' + parseInt(lj / 10) + '.png';
+    cultural.src = culturalSrc;
 
 
-    // 根据文物显示简介
-    switch (culturalID) {
-        case 1:
-            console.log(1);
-            introduce.innerHTML = '玉琮式管<br>反山M20： 87<br>高3 .47 厘米';
-            break;
-        case 2:
-            console.log(2);
-            introduce.innerHTML = '龙首纹玉圆牌<br>反山M22：26-1<br>外径4.7-5.4厘米不等';
-            break;
-        case 3:
-            console.log(3);
-            introduce.innerHTML = '玉三叉形器<br>瑶山M7：26<br>高4.8厘米';
-            break;
-        case 4:
-            console.log(4);
-            introduce.innerHTML = '玉璜<br>反山M23：67<br>高5.75厘米';
-            break;
-        case 5:
-            console.log(5);
-            introduce.innerHTML = '玉鸟<br>瑶山M2：50<br>长3.2厘米';
-            break;
-        case 6:
-            console.log(6);
-            introduce.innerHTML = '玉鱼<br>反山M22：23<br>长4.83厘米';
-            break;
-    }
-    var recipient = introduce.innerHTML;
-    console.log(introduce.innerHTML);
+    // var culturalID = parseInt(cultural.src.split('.')[0].split('_')[1]);
+    // // console.log(culturalID + 1);
 
-    // 换一换
-    var change = document.querySelector('.change');
-    var i = 0;
-    postmark.addEventListener('click', function() {
-        i++;
-        if (i == 4) {
-            i = 1;
-        }
-        console.log('image/xc_' + i + '.png');
-        postmark.src = 'image/xc_' + i + '.png';
-        postmark.style.animation = 'fadein 1.5s';
-        postmark.addEventListener("animationend", function() {
-            $(this).css("animation", "");
-        })
+    // // 换一换
+    // var change = document.querySelector('.change');
+    // var i = 0;
+    // postmark.addEventListener('click', function() {
+    //     i++;
+    //     if (i == 4) {
+    //         i = 1;
+    //     }
+    //     console.log('image/xc_' + i + '.png');
+    //     postmark.src = 'image/xc_' + i + '.png';
+    //     postmark.style.animation = 'fadein 1.5s';
+    //     postmark.addEventListener("animationend", function() {
+    //         $(this).css("animation", "");
+    //     })
 
-    })
+    // })
 
 
     // 选择加动画
@@ -143,8 +93,22 @@
     //     }
     // })
 
-    // 提交到服务器
+
+    var postid = 0;
+    var postsrc = 'image/xc_1.png';
     $(document).ready(function() {
+        // 点击换邮戳
+        $('.postmark').click(function() {
+            $(this).fadeOut(10)
+            postid++;
+            if (postid == 4) {
+                postid = 1;
+            }
+            postsrc = 'image/xc_' + postid + '.png';
+            $(this).attr('src', postsrc).fadeIn(1000);
+        })
+
+        // 提交到服务器
         $(".finish").click(function() {
             var checkbox = document.querySelector('#checkbox');
             var type = checkbox.checked ? 1 : 2;
@@ -160,16 +124,16 @@
 
 
             $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=submits", {
-                    title: title,
+                    title: lj,
                     content: content,
-                    recipient: recipient,
-                    blessing: 's',
+                    recipient: '',
+                    blessing: word,
                     sender: 's',
                     type: type,
-                    img_url_id: imgUrlId,
+                    img_url_id: postid,
                 },
                 function(data, status) {
-                    // console.log(data.data.id);
+                    console.log(data);
                     window.location.href = "showCover.html?" + 'cardId=' + data.data.id;
                     // alert(alertText);
 

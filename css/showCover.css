@@ -1,61 +1,74 @@
-* {
-    /* box-sizing: border-box; */
-    margin: 0;
-    padding: 0;
-}
-
-.pic,
-.blessing {
-    width: 320px;
-}
-
-.pic img {
-    display: block;
-    width: 320px;
-    /* max-width: 100%; */
-}
-
-.blessing {
-    height: 60px;
-    background-color: pink;
-}
-
-.blessing img {
-    width: 260px;
-    /* float: left; */
-    vertical-align: middle;
-    float: left;
-}
-
-.canvas {
-    width: 60px;
-    height: 60px;
-    float: right;
-}
-
-#code {
-    display: inline-block;
-}
-
-
-/* .section {
+    * {
+        /* box-sizing: border-box; */
+        margin: 0;
+        padding: 0;
+    }
+    
+    .pic,
+    .blessing {
+        width: 320px;
+    }
+    
+    .pic img {
+        display: block;
+        width: 320px;
+        /* max-width: 100%; */
+    }
+    
+    .blessing {
+        height: 70px;
+    }
+    
+    .blessing img {
+        width: 320px;
+        /* float: left; */
+        vertical-align: middle;
+        float: left;
+    }
+    
+    .canvas canvas {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 505px;
+        left: 250px;
+    }
+    /* #code {
+        display: inline-block;
+    } */
+    /* .section {
     display: none;
 } */
-
-.image {
-    width: 320px;
-    height: 568px;
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    background-color: pink;
-    transform: translateX(-50%);
-}
-
-.alt {
-    position: absolute;
-    top: 575px;
-    text-align: center;
-    width: 100%;
-}
+    
+    .image {
+        width: 320px;
+        /* height: 568px;s */
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        background-color: pink;
+        transform: translateX(-50%);
+    }
+    
+    .alt {
+        position: absolute;
+        top: 575px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .shade {
+        position: absolute;
+        width: 320px;
+        top: 0;
+        left: 0;
+    }
+    
+    .pic .word {
+        position: absolute;
+        width: 32px;
+        top: 43px;
+        left: 18px;
+        z-index: 1;
+    }
