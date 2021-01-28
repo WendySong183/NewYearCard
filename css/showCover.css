@@ -5,7 +5,10 @@
     }
     
     body {
-        background: url(../image/bgbird.png) repeat;
+        background: url(../image/bird.png) no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-color: #CCCCCC;
     }
     
     .section {
@@ -63,7 +66,7 @@
         position: absolute;
         top: 5%;
         left: 50%;
-        background-color: pink;
+        /* background-color: pink; */
         transform: translateX(-50%);
         box-shadow: 2px 2px 8px #333333;
     }
