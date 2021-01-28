@@ -4,6 +4,16 @@
         padding: 0;
     }
     
+    body {
+        background: url(../image/bg.png) repeat;
+    }
+    
+    .section {
+        width: 320px;
+        box-shadow: 2px 2px 8px #333333;
+        background: url(../image/bg.png) repeat;
+    }
+    
     .pic,
     .blessing {
         width: 320px;
@@ -11,7 +21,9 @@
     
     .pic img {
         display: block;
-        width: 320px;
+        width: 300px;
+        margin: 10px 10px 0;
+        padding-top: 10px;
         /* max-width: 100%; */
     }
     
@@ -30,7 +42,7 @@
         width: 60px;
         height: 60px;
         position: absolute;
-        top: 505px;
+        top: 495px;
         left: 250px;
     }
     /* #code {
@@ -53,6 +65,7 @@
         left: 50%;
         background-color: pink;
         transform: translateX(-50%);
+        box-shadow: 2px 2px 8px #333333;
     }
     
     .alt {
