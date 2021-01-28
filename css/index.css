@@ -5,8 +5,10 @@
 }
 
 body {
-    background: url(../image/indexbg.png);
-    background-size: cover
+    background: url(../image/indexbg.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #CCCCCC;
 }
 
 a {

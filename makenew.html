@@ -18,6 +18,13 @@
             var flag;
             var index = 0;
             var srcOn = 0;
+            var relicId = 11;
+            var map = new Map();
+            map.set("lj", 11);
+            map.set("word", "image/light_1");
+            // 文字
+            var wordsrc = 'image/light';
+            var wordid = 1;
             $('.choose li').click(function() {
                 $(this).animate({
                     width: '25%',
@@ -29,27 +36,61 @@
                     opacity: 0.5
                 });
                 $('.show li').eq(index).fadeIn(1000).siblings('li').hide();
+                srcOn = $('.show li').eq(index).children('.relic').index();
+                relicId = String(index + 1) + String(1);
+
+                wordsrc = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[0];
+                wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
+                map.set("lj", relicId);
+                map.set("word", wordsrc + "_" + wordid + '.png');
             })
 
-            srcOn = $('.show li').eq(index).children('.relic').index();
+
+
+            // 向左
             $('.left').click(function() {
-                if (srcOn == 0) {
-                    srcOn += 8;
-                };
-                srcOn--;
-                $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
-
-            })
+                    if (srcOn == 0) {
+                        srcOn += 8;
+                    };
+                    srcOn--;
+                    $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
+                    relicId = String(index + 1) + String(srcOn + 1);
+                    console.log('r', relicId);
+                    map.set("lj", relicId);
+                })
+                // 向右
             $('.right').click(function() {
                 if (srcOn == 7) {
                     srcOn = -1;
                 };
                 srcOn++;
-                console.log(srcOn);
 
                 $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
-
+                relicId = String(index + 1) + String(srcOn + 1);
+                map.set("lj", relicId);
+                console.log('r', relicId);
             })
+
+            $('.word').click(function() {
+                $(this).fadeOut(10)
+                wordid++;
+                if (wordid == 10) {
+                    wordid = 0
+                }
+                newWord = wordsrc + "_" + wordid + '.png';
+                console.log(newWord);
+                $(this).attr("src", newWord).fadeIn(1000);
+                map.set("word", newWord);
+            });
+
+            $('.btn').click(function() {
+                var path = "makeReverse.html"
+                path = path + "?lj=" + map.get("lj") + "&word=" + map.get("word");
+                console.log(path);
+
+                window.location.href = path
+
+            });
         })
     </script>
 </head>
