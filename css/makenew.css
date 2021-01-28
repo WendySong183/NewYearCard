@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: url(../image/bg.png) repeat;
+}
+
+.show ul {
+    width: 80%;
+    margin: 3% 10%;
+}
+
+.relic {
+    display: none;
+}
+
+.cc {
+    display: block;
+}
+
+.show li {
+    display: none;
+}
+
+.show img {
+    width: 100%;
+}
+
+.relic {
+    box-shadow: 2px 2px 8px #333333;
+}
+
+.show .shade {
+    position: absolute;
+    width: 80%;
+    top: 7%;
+    left: 10%;
+}
+
+.show .word {
+    position: absolute;
+    width: 10%;
+    top: 13%;
+    left: 13%;
+    z-index: 1;
+    -webkit-animation: float ease-in-out 1.5s infinite;
+    animation: float ease-in-out 1.5s infinite;
+}
+
+.show .current {
+    display: block;
+}
+
+.left,
+.right {
+    position: fixed;
+    top: 44%;
+    left: 8%;
+    width: 5%;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    text-align: center;
+    background: #6b6b6d6b;
+    color: #ffffff;
+    z-index: 999;
+}
+
+.right {
+    left: 87%;
+    background-color: #6b6b6d6b;
+}
+
+.choose ul {
+    width: 100%;
+    padding-left: 5%;
+}
+
+.choose li {
+    width: 13%;
+    float: left;
+    opacity: .5;
+}
+
+.choose .on {
+    width: 25%;
+    opacity: 1;
+}
+
+li img {
+    width: 100%;
+}
+
+.btn {
+    width: 30%;
+    height: 25px;
+    position: fixed;
+    top: 95%;
+    left: 36%;
+    /* border-radius: 8%; */
+}
+
+.btn img {
+    width: 100%;
+}
+
+
+/* 动画 */
+
+.p1_cc {
+    /* 字体闪动 */
+    font-size: 2.506rem;
+    text-align: center;
+    color: #fff;
+    -webkit-animation: float ease-in-out 1.5s infinite;
+    animation: float ease-in-out 1.5s infinite;
+}
+
+@-webkit-keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+p {
+    /* text-align: center; */
+    color: #a2423fbe;
+    margin: 5% 8% 1%;
+    font-size: 14px;
+    font-family: 'STFangsong';
+}
