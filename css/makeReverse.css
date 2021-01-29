@@ -22,7 +22,8 @@ li {
 .title {
     /* text-align: center; */
     color: #a2423fbe;
-    margin: 5% 3% 0;
+    margin: 5% 0 0;
+    margin-left: 70%;
     font-size: 14px;
     font-family: 'STFangsong';
 }
