@@ -4,27 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scable=no">
-    <title>主页</title>
+    <title>良博贺新年</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="js/music.js">
-    </script>
+    <!-- <script src="js/t.js"></script> -->
+    <script type="text/javascript" src="js/music.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
     <!-- <script src='http://wx.weibenh5.com/common/egret/vconsole.min.js'></script> -->
 
 </head>
 
 <body>
-    <div class="music">
-        <img src="image/music_pointer.png">
-        <img id="music" class="play" src="image/music_disc.png">
-    </div>
-    <div id="n1"></div>
-    <div id="n2"></div>
-    <audio autoplay="true">
-        <source src="audio/mozart.mp3" type="audio/mpeg">
-    </audio>
+    <audio id='audio' autoplay="autoplay" src='audio/mozart.mp3' loop></audio>
+    <button id='status' onclick='triggerBgMusic()'></button>
+    <img src="image/music_1.png" class="music music_start">
+    <img src="image/music_2.png" class="music music_stop">
 
     <div class="pic">
         <img src="image/word.png" alt="" class="word">
@@ -68,6 +65,72 @@
         $("#headimg").attr('src', headimgurl);
 
         //alert('nickname' + $.cookie('nickname'))
+    </script>
+    <script>
+        //----------页面初始化------------
+        var audio = document.getElementById('audio');
+        if (sessionStorage.bgmusic == 'pause') {
+            playBgMusic(false);
+        } else {
+            playBgMusic(true);
+            //----------处理自动播放------------
+            //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+            document.addEventListener('DOMContentLoaded', function() {
+                function audioAutoPlay() {
+                    playBgMusic(true);
+                    document.addEventListener("WeixinJSBridgeReady", function() {
+                        playBgMusic(true);
+                    }, false);
+                }
+                audioAutoPlay();
+            });
+            //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+            function audioAutoPlay() {
+                playBgMusic(true);
+                document.removeEventListener('touchstart', audioAutoPlay);
+            }
+            document.addEventListener('touchstart', audioAutoPlay);
+        }
+        //----------处理页面激活------------
+        var hiddenProperty = 'hidden' in document ? 'hidden' :
+            'webkitHidden' in document ? 'webkitHidden' :
+            'mozHidden' in document ? 'mozHidden' :
+            null;
+        var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+        var onVisibilityChange = function() {
+            if (!document[hiddenProperty]) {
+                if (!sessionStorage.bgmusic || sessionStorage.bgmusic == 'play') {
+                    audio.play();
+                }
+            } else {
+                audio.pause();
+            }
+        }
+        document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        //---------背景音乐开关----------
+        function triggerBgMusic() {
+            if (!sessionStorage.bgmusic || sessionStorage.bgmusic == 'play') {
+                playBgMusic(false);
+            } else {
+                playBgMusic(true);
+            }
+        }
+        //---------音乐播放和暂停----------
+        function playBgMusic(val) {
+            if (val) {
+                audio.play();
+                sessionStorage.bgmusic = 'play';
+                document.getElementById('status').innerHTML = '正在播放';
+                $(".music_stop").css("display", "none")
+                $(".music_start").css("display", "block")
+            } else {
+                audio.pause();
+                sessionStorage.bgmusic = 'pause';
+                document.getElementById('status').innerHTML = '停止播放了';
+                $(".music_start").css("display", "none")
+                $(".music_stop").css("display", "block")
+            }
+        }
     </script>
 
 </body>

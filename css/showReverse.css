@@ -12,6 +12,10 @@ body {
     background-color: #CCCCCC;
 }
 
+li {
+    list-style: none;
+}
+
 
 /* 标题 */
 
@@ -62,7 +66,7 @@ body {
 
 .postmark {
     position: absolute;
-    top: 36%;
+    top: 65%;
     right: 0%;
     width: 30%;
     -webkit-animation: float ease-in-out 1.5s infinite;
@@ -72,13 +76,18 @@ body {
 
 /* 祝福显示 */
 
-.section {
+.section,
+.recipient {
     /* display: flex;
     flex-direction: row; */
     position: relative;
     margin: 2% 10% 0;
     width: 80%;
-    height: 300px;
+    height: 200px;
+}
+
+.recipient li {
+    display: none;
 }
 
 .section div {
@@ -88,8 +97,9 @@ body {
 .row {
     height: 50px;
     border-bottom: 1px solid #c19871;
+    font-size: 20px;
     line-height: 50px;
-    font-size: 25px;
+    text-align: center;
     font-family: 'KaiTi';
 }
 
@@ -201,121 +211,26 @@ textarea {
 /* 音乐 */
 
 .music {
-    position: fixed;
-    top: 2%;
-    right: 4vw;
-    z-index: 5;
-    width: 10vw;
-    height: 10vw;
-    border: 5px solid #81b7c3;
-    border-radius: 50%;
-    background-color: #fff;
+    position: absolute;
+    top: 8%;
+    right: 5%;
+    width: 10%;
+    /* z-index: 1; */
+    /* height: 2rem; */
 }
 
-.music>img:first-of-type {
+.music_stop {
+    display: none;
+}
+
+#audio,
+#status {
+    opacity: 0;
     position: absolute;
-    top: 24%;
-    right: 2.5%;
-    width: 28.421%;
+    top: 8%;
+    right: 5%;
     z-index: 1;
-}
-
-.music>img:last-of-type {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 79%;
-    z-index: 0;
-}
-
-.music>img.play {
-    -webkit-animation: music_disc 4s linear infinite;
-    -o-animation: music_disc 4s linear infinite;
-    animation: music_disc 4s linear infinite;
-}
-
-@keyframes music_disc {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms--transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms--transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes music_disc {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms--transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms--transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@-o-keyframes music_disc {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms--transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms--transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-#n1 {
-    /* 音量+ */
-    display: none;
-    position: fixed;
-    top: 16vh;
-    right: 4vw;
-    z-index: 4;
-    background: url("../image/n1.png");
-    width: 13vw;
-    height: 13vw;
-    background-size: 100%;
-    opacity: .7;
-    transition: all 0.3s linear;
-}
-
-#n1:hover {
-    opacity: 1;
-}
-
-#n2 {
-    /* 音量- */
-    display: none;
-    position: fixed;
-    top: 26vh;
-    right: 4vw;
-    z-index: 4;
-    background: url("../image/n2.png");
-    width: 13vw;
-    height: 13vw;
-    background-size: 100%;
-    opacity: .7;
-    transition: all 0.3s linear;
-}
-
-#n2:hover {
-    opacity: 1;
+    /* height: 0.8rem; */
+    display: block;
+    width: 8%;
 }

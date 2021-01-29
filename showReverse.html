@@ -4,24 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimun-scale=1.0,maximum-scale=1.0,user-scable=no">
-    <title>展示（背面）</title>
+    <title>良博贺新年</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/showReverse.css">
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/jquery.qrcode.min.js"></script>
     <script type="text/javascript" src="js/music.js"></script>
+    <script type="text/javascript" src="js/music.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
 <body>
-    <div class="music">
-        <img src="image/music_pointer.png">
-        <img id="music" class="play" src="image/music_disc.png">
-    </div>
-    <div id="n1"></div>
-    <div id="n2"></div>
-    <audio autoplay="true">
-        <source src="audio/hbd.mp3" type="audio/mpeg">
-    </audio>
+    <audio id='audio' autoplay="autoplay" src='audio/hbd.mp3' loop></audio>
+    <button id='status' onclick='triggerBgMusic()'></button>
+    <img src="image/music_1.png" class="music music_start">
+    <img src="image/music_2.png" class="music music_stop">
 
 
     <div class="beimian">
@@ -32,12 +29,52 @@
             <img src="" alt="" class="postmark">
 
         </div>
+        <div class="recipient">
+            <ul>
+                <li>
+                    <p class="row">鸟是良渚文化图像中</p>
+                    <p class="row">最丰富的题材。</p>
+                    <p class="row">它寓意着“一飞冲天”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+                <li>
+                    <p class="row">龙首纹玉圆牌</p>
+                    <p class="row">是良渚先民崇拜的图腾之一</p>
+                    <p class="row">它寓意着“圆圆满满”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+                <li>
+                    <p class="row">玉三叉型器</p>
+                    <p class="row">是良渚男性贵族的头饰</p>
+                    <p class="row">它寓意着“独占鳌头”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+                <li>
+                    <p class="row">玉琮式管与“玉琮”造型相似</p>
+                    <p class="row">琢有精美纹饰，线条精细</p>
+                    <p class="row">它寓意着“节节高升”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+                <li>
+                    <p class="row">玉璜是良渚女性贵族的玉饰</p>
+                    <p class="row">整器纹饰简约，工艺精细</p>
+                    <p class="row">它寓意着“如有神助”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+                <li>
+                    <p class="row">玉鱼是缝缀于衣物上的饰件</p>
+                    <p class="row">外表精致，十分灵动</p>
+                    <p class="row">它寓意着“如鱼得水”</p>
+                    <p class="row">我愿用它送上辛丑年的祝福</p>
+                </li>
+            </ul>
+        </div>
         <div class="section">
-            <p class="row"></p>
-            <p class="row"></p>
-            <p class="row"></p>
-            <p class="row"></p>
-            <p class="row"></p>
+            <p class="row s"></p>
+            <p class="row s"></p>
+            <p class="row s"></p>
+            <!-- <p class="row"></p>
+            <p class="row"></p> -->
         </div>
     </div>
     <div class="link">
@@ -53,14 +90,15 @@
             var postmarkId;
             var postmarksrc;
             var content;
-            var rows = document.querySelectorAll('.row');
+            var relicId;
+            var rows = document.querySelectorAll('.s');
             $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
                     id: cardId,
                 },
                 function(data, status) {
                     console.log(data, status);
                     relicId = parseInt(data.data.title / 10);
-                    culturalId = 'image/b_' + relicId + '.png';
+                    culturalId = 'image/b_1' + relicId + '.png';
                     postmarksrc = data.data.img_url_id;
                     content = data.data.content;
                     console.log(content);
@@ -74,13 +112,83 @@
                         rows[i].innerHTML = text[i].replace(/ /g, '&nbsp');
                     }
 
+                    // 显示对应的祝福
+                    $('.recipient li').eq(relicId).fadeIn().siblings('li').hide();
+
                     // window.location.reload()
 
                 });
+
             $('button').click(function() {
                 window.location.href = "https://wx.weibenh5.com/2020/Dec/yearCard/index.php"
             })
         })
+    </script>
+    <script>
+        //----------页面初始化------------
+        var audio = document.getElementById('audio');
+        if (sessionStorage.bgmusic == 'pause') {
+            playBgMusic(false);
+        } else {
+            playBgMusic(true);
+            //----------处理自动播放------------
+            //--创建页面监听，等待微信端页面加载完毕 触发音频播放
+            document.addEventListener('DOMContentLoaded', function() {
+                function audioAutoPlay() {
+                    playBgMusic(true);
+                    document.addEventListener("WeixinJSBridgeReady", function() {
+                        playBgMusic(true);
+                    }, false);
+                }
+                audioAutoPlay();
+            });
+            //--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+            function audioAutoPlay() {
+                playBgMusic(true);
+                document.removeEventListener('touchstart', audioAutoPlay);
+            }
+            document.addEventListener('touchstart', audioAutoPlay);
+        }
+        //----------处理页面激活------------
+        var hiddenProperty = 'hidden' in document ? 'hidden' :
+            'webkitHidden' in document ? 'webkitHidden' :
+            'mozHidden' in document ? 'mozHidden' :
+            null;
+        var visibilityChangeEvent = hiddenProperty.replace(/hidden/i, 'visibilitychange');
+        var onVisibilityChange = function() {
+            if (!document[hiddenProperty]) {
+                if (!sessionStorage.bgmusic || sessionStorage.bgmusic == 'play') {
+                    audio.play();
+                }
+            } else {
+                audio.pause();
+            }
+        }
+        document.addEventListener(visibilityChangeEvent, onVisibilityChange);
+        //---------背景音乐开关----------
+        function triggerBgMusic() {
+            if (!sessionStorage.bgmusic || sessionStorage.bgmusic == 'play') {
+                playBgMusic(false);
+            } else {
+                playBgMusic(true);
+            }
+        }
+        //---------音乐播放和暂停----------
+        function playBgMusic(val) {
+            if (val) {
+                audio.play();
+                sessionStorage.bgmusic = 'play';
+                document.getElementById('status').innerHTML = '正在播放';
+                $(".music_stop").css("display", "none")
+                $(".music_start").css("display", "block")
+            } else {
+                audio.pause();
+                sessionStorage.bgmusic = 'pause';
+                document.getElementById('status').innerHTML = '停止播放了';
+                $(".music_start").css("display", "none")
+                $(".music_stop").css("display", "block")
+            }
+        }
     </script>
 </body>
 
