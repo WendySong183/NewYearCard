@@ -21,7 +21,7 @@
             background-color: #fff;
             z-index: 100;
         }
-
+        
         .loading .pic {
             width: 64px;
             height: 64px;
@@ -32,13 +32,12 @@
             bottom: 0;
             left: 0;
             margin: auto;
-
         }
     </style>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
     <script>
         // 通过加载状态来显示进度条
-        document.onreadystatechange = function () {
+        document.onreadystatechange = function() {
             if (document.readyState == "complete") {
                 $(".loading").fadeOut();
             }
@@ -83,7 +82,7 @@
 </body>
 <script>
     var cardId = location.search.substr(1).split('=')[1];
-    var url = 'https://wendysong183.github.io/NewYearCard/showReverse.html?cardId=' + cardId;
+    var url = 'https://wx.weibenh5.com/2020/Dec/yearCard/newYearCard/showReverse.html?cardId=' + cardId;
     console.log(url);
 
     jQuery('.canvas').qrcode({
@@ -108,12 +107,12 @@
     var shadesrc;
     var blesssrc;
 
-    $(function () {
+    $(function() {
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
-            id: cardId,
-        },
-            function (data, status) {
+                id: cardId,
+            },
+            function(data, status) {
                 console.log(data, status);
 
 
@@ -129,7 +128,7 @@
                 $('.word').attr('src', wordsrc);
                 $('.bless').attr('src', blesssrc);
                 // window.location.reload()
-                $('.alt').ready(function () {
+                $('.alt').ready(function() {
                     console.log(1);
 
                     html2canvas(cover, {
