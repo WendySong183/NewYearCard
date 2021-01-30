@@ -65,7 +65,7 @@ body {
 
 .left,
 .right {
-    position: fixed;
+    position: absolute;
     top: 44%;
     left: 8%;
     width: 5%;
@@ -103,6 +103,32 @@ body {
 li img {
     width: 100%;
 }
+
+.color {
+    position: absolute;
+    top: 15%;
+    left: 80%;
+    width: 8%;
+    /* height: 50px; */
+    /* padding-left: 5%; */
+}
+
+.color p {
+    width: 100%;
+    /* float: left; */
+    /* opacity: .5; */
+    margin-bottom: 25%;
+}
+
+.color img {
+    border: 1px solid #ffffff;
+}
+
+
+/* .color .on {
+    width: 15%;
+    opacity: 1;
+} */
 
 .btn {
     width: 30%;
@@ -188,6 +214,7 @@ p {
 
 .introduce .b {
     color: #daa250;
+    display: none;
     font-size: 18px;
     margin: 2% 0 0;
 }

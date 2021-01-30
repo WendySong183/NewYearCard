@@ -44,33 +44,42 @@
                 wordid = $('.show li').eq(index).children('.word').attr('src').split('.')[0].split('_')[1];
                 map.set("lj", relicId);
                 map.set("word", wordsrc + "_" + wordid + '.png');
-            })
-
-
-
-            // 向左
-            $('.left').click(function() {
-                    if (srcOn == 0) {
-                        srcOn += 8;
-                    };
-                    srcOn--;
-                    $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
-                    relicId = String(index + 1) + String(srcOn + 1);
-                    console.log('r', relicId);
-                    map.set("lj", relicId);
-                })
-                // 向右
-            $('.right').click(function() {
-                if (srcOn == 7) {
-                    srcOn = -1;
-                };
-                srcOn++;
-
+            });
+            // 颜色
+            $('.color p').click(function() {
+                // console.log($(this).index());
+                srcOn = $(this).index();
                 $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
                 relicId = String(index + 1) + String(srcOn + 1);
-                map.set("lj", relicId);
                 console.log('r', relicId);
+                map.set("lj", relicId);
             });
+
+
+            // // 向左
+            // $('.left').click(function() {
+            //         if (srcOn == 0) {
+            //             srcOn += 8;
+            //         };
+            //         srcOn--;
+            //         $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
+            //         relicId = String(index + 1) + String(srcOn + 1);
+            //         console.log('r', relicId);
+            //         map.set("lj", relicId);
+            //     })
+            //     // 向右
+            // $('.right').click(function() {
+            //     if (srcOn == 7) {
+            //         srcOn = -1;
+            //     };
+            //     srcOn++;
+
+            //     $('.show li').eq(index).children('.relic').eq(srcOn).fadeIn(1000).siblings('.relic').hide();
+            //     relicId = String(index + 1) + String(srcOn + 1);
+            //     map.set("lj", relicId);
+            //     console.log('r', relicId);
+            // });
+
             // 文字
             wordid = 0;
             $('.word').click(function() {
@@ -118,8 +127,8 @@
     <p>点击文字更换祝福</p>
     <div class="show">
         <ul>
-            <div class="left">&lt</div>
-            <div class="right">&gt</div>
+            <!-- <div class="left">&lt</div>
+            <div class="right">&gt</div> -->
             <li class="current">
                 <img src="image/a_11.png" alt="" class="relic cc">
                 <img src="image/a_12.png" alt="" class="relic">
@@ -141,6 +150,16 @@
                 <img src="image/light_7.png" alt="" class="word">
                 <img src="image/light_8.png" alt="" class="word">
                 <img src="image/light_9.png" alt="" class="word">
+                <div class="color">
+                    <p><img src="image/ac_11.png" alt=""></p>
+                    <p><img src="image/ac_12.png" alt=""></p>
+                    <p><img src="image/ac_13.png" alt=""></p>
+                    <p><img src="image/ac_14.png" alt=""></p>
+                    <p><img src="image/ac_15.png" alt=""></p>
+                    <p><img src="image/ac_16.png" alt=""></p>
+                    <p><img src="image/ac_17.png" alt=""></p>
+                    <p><img src="image/ac_18.png" alt=""></p>
+                </div>
             </li>
             <li>
                 <img src="image/a_21.png" alt="" class="relic cc">
@@ -163,7 +182,16 @@
                 <img src="image/dark_7.png" alt="" class="word">
                 <img src="image/dark_8.png" alt="" class="word">
                 <img src="image/dark_9.png" alt="" class="word">
-
+                <div class="color">
+                    <p><img src="image/ac_21.png" alt=""></p>
+                    <p><img src="image/ac_22.png" alt=""></p>
+                    <p><img src="image/ac_23.png" alt=""></p>
+                    <p><img src="image/ac_24.png" alt=""></p>
+                    <p><img src="image/ac_25.png" alt=""></p>
+                    <p><img src="image/ac_26.png" alt=""></p>
+                    <p><img src="image/ac_27.png" alt=""></p>
+                    <p><img src="image/ac_28.png" alt=""></p>
+                </div>
 
             </li>
             <li>
@@ -187,7 +215,16 @@
                 <img src="image/dark_7.png" alt="" class="word">
                 <img src="image/dark_8.png" alt="" class="word">
                 <img src="image/dark_9.png" alt="" class="word">
-
+                <div class="color">
+                    <p><img src="image/ac_31.png" alt=""></p>
+                    <p><img src="image/ac_32.png" alt=""></p>
+                    <p><img src="image/ac_33.png" alt=""></p>
+                    <p><img src="image/ac_34.png" alt=""></p>
+                    <p><img src="image/ac_35.png" alt=""></p>
+                    <p><img src="image/ac_36.png" alt=""></p>
+                    <p><img src="image/ac_37.png" alt=""></p>
+                    <p><img src="image/ac_38.png" alt=""></p>
+                </div>
             </li>
             <li>
                 <img src="image/a_41.png" alt="" class="relic cc">
@@ -210,7 +247,16 @@
                 <img src="image/dark_7.png" alt="" class="word">
                 <img src="image/dark_8.png" alt="" class="word">
                 <img src="image/dark_9.png" alt="" class="word">
-
+                <div class="color">
+                    <p><img src="image/ac_41.png" alt=""></p>
+                    <p><img src="image/ac_42.png" alt=""></p>
+                    <p><img src="image/ac_43.png" alt=""></p>
+                    <p><img src="image/ac_44.png" alt=""></p>
+                    <p><img src="image/ac_45.png" alt=""></p>
+                    <p><img src="image/ac_46.png" alt=""></p>
+                    <p><img src="image/ac_47.png" alt=""></p>
+                    <p><img src="image/ac_48.png" alt=""></p>
+                </div>
             </li>
             <li>
                 <img src="image/a_51.png" alt="" class="relic cc">
@@ -233,7 +279,16 @@
                 <img src="image/dark_7.png" alt="" class="word">
                 <img src="image/dark_8.png" alt="" class="word">
                 <img src="image/dark_9.png" alt="" class="word">
-
+                <div class="color">
+                    <p><img src="image/ac_51.png" alt=""></p>
+                    <p><img src="image/ac_52.png" alt=""></p>
+                    <p><img src="image/ac_53.png" alt=""></p>
+                    <p><img src="image/ac_54.png" alt=""></p>
+                    <p><img src="image/ac_55.png" alt=""></p>
+                    <p><img src="image/ac_56.png" alt=""></p>
+                    <p><img src="image/ac_57.png" alt=""></p>
+                    <p><img src="image/ac_58.png" alt=""></p>
+                </div>
             </li>
             <li>
                 <img src="image/a_61.png" alt="" class="relic cc">
@@ -256,11 +311,37 @@
                 <img src="image/light_7.png" alt="" class="word">
                 <img src="image/light_8.png" alt="" class="word">
                 <img src="image/light_9.png" alt="" class="word">
-
+                <div class="color">
+                    <p><img src="image/ac_61.png" alt=""></p>
+                    <p><img src="image/ac_62.png" alt=""></p>
+                    <p><img src="image/ac_63.png" alt=""></p>
+                    <p><img src="image/ac_64.png" alt=""></p>
+                    <p><img src="image/ac_65.png" alt=""></p>
+                    <p><img src="image/ac_66.png" alt=""></p>
+                    <p><img src="image/ac_67.png" alt=""></p>
+                    <p><img src="image/ac_68.png" alt=""></p>
+                </div>
             </li>
         </ul>
     </div>
     <p>请点击文物选择贺卡主题</p>
+
+    <!-- <div class="color">
+        <ul>
+            <li>
+
+
+            </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+            <li> </li>
+
+        </ul>
+    </div> -->
 
     <div class="choose">
         <ul>
