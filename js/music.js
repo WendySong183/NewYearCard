@@ -54,10 +54,13 @@ window.onload = function() {
     music.addEventListener("touchstart", function(event) {
         if (audio.paused) {
             audio.play();
-            this.setAttribute("class", "play");
+            // this.setAttribute("class", "play");
+            this.src = 'image/m1.png'
         } else {
             audio.pause();
-            this.setAttribute("class", "");
+            // this.setAttribute("class", "stop");
+            this.src = 'image/m2.png'
+
         }
     }, false);
     // page1.addEventListener("touchstart", function (event) {

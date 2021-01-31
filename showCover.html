@@ -103,8 +103,7 @@
                 // window.location.reload()
                 $('.alt').ready(function() {
                     console.log(1);
-                    cover.style.display = 'none';
-                    final.style.display = 'none';
+
                     html2canvas(cover, {
                         scale: 2,
                         width: 320,
@@ -115,7 +114,8 @@
                             console.log("base64编码数据：", imgUrl);
                             img.src = imgUrl;
                         }, 0)
-
+                        cover.style.display = 'none';
+                        final.style.display = 'none';
                     });
                 })
             });

@@ -211,26 +211,128 @@ textarea {
 /* 音乐 */
 
 .music {
+    /* position: fixed; */
     position: absolute;
-    top: 8%;
-    right: 5%;
-    width: 10%;
-    /* z-index: 1; */
-    /* height: 2rem; */
+    /* top: 1vh; */
+    top: 1%;
+    right: 3%;
+    /* left: 2vw; */
+    z-index: 5;
+    width: 13vw;
+    height: 13vw;
+    /* border: 5px solid #81b7c3; */
+    border-radius: 50%;
+    /* background-color: #fff; */
 }
 
-.music_stop {
+.music>img:first-of-type {
+    position: absolute;
+    top: 24%;
+    right: 2.5%;
+    width: 28.421%;
+    z-index: 1;
+}
+
+.music>img:last-of-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 79%;
+    z-index: 0;
+}
+
+.music>img.play {
+    /* -webkit-animation: music_disc 4s linear infinite;
+    -o-animation: music_disc 4s linear infinite;
+    animation: music_disc 4s linear infinite; */
+}
+
+.stop {
+    background: url(../image/m2.png);
+}
+
+@keyframes music_disc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms--transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms--transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes music_disc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms--transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms--transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes music_disc {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms--transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms--transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#n1 {
+    /* 音量+ */
+    position: fixed;
+    top: 16vh;
+    right: 4vw;
+    z-index: 4;
+    background: url("../image/n1.png");
+    width: 13vw;
+    height: 13vw;
+    background-size: 100%;
+    opacity: .7;
+    transition: all 0.3s linear;
     display: none;
 }
 
-#audio,
-#status {
-    opacity: 0;
-    position: absolute;
-    top: 8%;
-    right: 5%;
-    z-index: 1;
-    /* height: 0.8rem; */
-    display: block;
-    width: 8%;
+#n1:hover {
+    opacity: 1;
+}
+
+#n2 {
+    /* 音量- */
+    position: fixed;
+    top: 26vh;
+    right: 4vw;
+    z-index: 4;
+    background: url("../image/n2.png");
+    width: 13vw;
+    height: 13vw;
+    background-size: 100%;
+    opacity: .7;
+    transition: all 0.3s linear;
+    display: none;
+}
+
+#n2:hover {
+    opacity: 1;
 }
