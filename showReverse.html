@@ -11,9 +11,31 @@
     <script src="js/jquery.qrcode.min.js"></script>
     <script src="js/music.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style-6.css">
+    <script>
+        // 通过加载状态来显示进度条
+        document.onreadystatechange = function() {
+            if (document.readyState == "complete") {
+                $(".loader").fadeOut(500);
+            }
+        }
+    </script>
 </head>
 
 <body>
+    <div class="loader">
+        <div>
+            良
+
+        </div>
+        <div>
+            博
+
+        </div>
+        <div>贺</div>
+        <div>新</div>
+        <div>年</div>
+    </div>
     <!-- <audio id='audio' autoplay="autoplay" src='audio/hbd.mp3' loop></audio>
     <button id='status' onclick='triggerBgMusic()'></button>
     <img src="image/m1.png" class="music music_start">
