@@ -48,12 +48,12 @@
                 <div class="t-slide">
                     <img src="image/finish_2.png" alt="" />
                 </div>
-                <div class="t-slide">
+                <!-- <div class="t-slide">
                     <img src="image/finish_3.png" alt="" />
                 </div>
                 <div class="t-slide">
                     <img src="image/finish_4.png" alt="" />
-                </div>
+                </div> -->
                 <div class="t-slider-controls">
                     <div class="arrow right-arrow">
                         <div class="arrow-container">
@@ -108,9 +108,16 @@
         // 头像赋值
         var headimgurl = $.cookie('headimgurl');
         $("#headimg").attr('src', headimgurl);
+        $(function() {
+                var i = Math.floor(Math.random() * (1 - 3 + 0)) + 3;
+                console.log(i);
 
-
-        //alert('nickname' + $.cookie('nickname'))
+                var zmsrc = 'image/finishz_' + i + '.png';
+                var bmsrc = 'image/finishb_' + i + '.png';
+                $('.t-slide').eq(0).children('img').attr('src', zmsrc);
+                $('.t-slide').eq(1).children('img').attr('src', bmsrc);
+            })
+            //alert('nickname' + $.cookie('nickname'))
     </script>
     <script>
         //----------页面初始化------------
