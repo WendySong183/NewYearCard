@@ -97,6 +97,7 @@ li {
 .row {
     height: 50px;
     border-bottom: 1px solid #c19871;
+    color: #000;
     font-size: 20px;
     line-height: 50px;
     text-align: center;
