@@ -12,14 +12,14 @@
     <script src="js/html2canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style-6.css" />
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script>
+    <!-- <script>
         // 通过加载状态来显示进度条
-        document.onreadystatechange = function() {
-            if (document.readyState == "complete") {
-                $(".loader").fadeOut(4000);
-            }
-        }
-    </script>
+        // document.onreadystatechange = function() {
+        //     if (document.readyState == "complete") {
+        //         $(".loader").fadeOut(4000);
+        //     }
+        // }
+    </script> -->
 </head>
 
 <body>
@@ -81,7 +81,9 @@
     var blesssrc;
 
     $(function() {
-
+        if ($('.image').readyState == "complete") {
+            $(".loader").fadeOut(4000);
+        }
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/api.php?a=details", {
                 id: cardId,
             },
