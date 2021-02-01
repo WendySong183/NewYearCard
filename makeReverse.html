@@ -178,8 +178,14 @@
                     img_url_id: postsrc,
                 },
                 function(data, status) {
-                    console.log(data);
-                    window.location.href = "showCover.html?" + 'cardId=' + data.data.id;
+                    console.log(data, status);
+                    console.log('e', data.info);
+                    if (data.error == 1) {
+                        alert(data.info);
+                    } else {
+                        window.location.href = "showCover.html?" + 'cardId=' + data.data.id;
+                    }
+                    // window.location.href = "showCover.html?" + 'cardId=' + data.data.id;
                     // alert(alertText);
 
                 });

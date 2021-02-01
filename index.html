@@ -18,9 +18,31 @@
     <!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
     <!-- <script src='http://wx.weibenh5.com/common/egret/vconsole.min.js'></script> -->
 
+    <link rel="stylesheet" type="text/css" href="css/style-6.css">
+    <script>
+        // 通过加载状态来显示进度条
+        document.onreadystatechange = function() {
+            if (document.readyState == "complete") {
+                $(".loader").delay(3000).fadeOut(2000);
+            }
+        }
+    </script>
 </head>
 
 <body>
+    <div class="loader">
+        <div>
+            良
+
+        </div>
+        <div>
+            博
+
+        </div>
+        <div>贺</div>
+        <div>新</div>
+        <div>年</div>
+    </div>
 
 
 
