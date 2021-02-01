@@ -82,6 +82,7 @@
     var shade;
     var shadesrc;
     var blesssrc;
+    var flag = 'dark';
 
     $(function() {
 
@@ -96,7 +97,12 @@
                 wordsrc = data.data.blessing;
                 relicsrc = 'image/a_' + relicId + '.png';
                 shade = wordsrc.split('/')[1].split('_')[0];
-                shadesrc = wordsrc;
+
+
+                if (parseInt(relicId / 10) == 1 || parseInt(relicId / 10) == 6) {
+                    flag = 'light';
+                }
+                shadesrc = 'image/' + flag + '.png';
                 blesssrc = 'image/d_' + parseInt(relicId / 10) + '.png';
                 console.log(shade);
                 $('.relic').attr('src', relicsrc);
