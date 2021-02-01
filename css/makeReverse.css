@@ -9,7 +9,7 @@ body {
     background: url(../image/bird.png) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #CCCCCC;
+    /* background-color: #CCCCCC; */
 }
 
 li {
@@ -96,6 +96,10 @@ li {
     margin: 2% 10% 0;
     width: 80%;
     height: 200px;
+}
+
+.recipient {
+    height: 250px;
 }
 
 .recipient li {

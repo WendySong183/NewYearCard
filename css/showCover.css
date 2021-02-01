@@ -8,13 +8,13 @@
      background: url(../image/bird.png) no-repeat center center;
      background-size: cover;
      background-attachment: fixed;
-     background-color: #CCCCCC;
+     /* background-color: #CCCCCC; */
  }
  
  .section {
      width: 320px;
      /* box-shadow: 2px 2px 8px #333333; */
-     background: url(../image/bg.png) repeat;
+     /* background: url(../image/bg.png) repeat; */
  }
  
  .pic,

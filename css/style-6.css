@@ -4,11 +4,11 @@
 }
 
 body {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
     /* background: url(../image/bgbird.png); */
     font-family: 'Open Sans';
     font-weight: 100;
-    color: #e41f1f;
+    /* color: #e41f1f; */
     font-size: 100%;
     margin: 0em;
     padding: 0em;

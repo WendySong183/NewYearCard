@@ -96,7 +96,7 @@
                 wordsrc = data.data.blessing;
                 relicsrc = 'image/a_' + relicId + '.png';
                 shade = wordsrc.split('/')[1].split('_')[0];
-                shadesrc = 'image/' + shade + '.png';
+                shadesrc = wordsrc;
                 blesssrc = 'image/d_' + parseInt(relicId / 10) + '.png';
                 console.log(shade);
                 $('.relic').attr('src', relicsrc);
