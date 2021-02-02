@@ -15,8 +15,9 @@
         // 通过加载状态来显示进度条
         document.onreadystatechange = function() {
             if (document.readyState == "complete") {
-                window.location.reload();
+
                 $(".loader").delay(3000).fadeOut(1000);
+                // window.location.reload();
             }
         }
     </script>
@@ -127,6 +128,7 @@
                         cover.style.display = 'none';
                         final.style.display = 'none';
                     });
+                    window.location.reload()
                 })
             });
         // window.location.reload()
