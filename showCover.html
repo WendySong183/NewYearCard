@@ -38,7 +38,7 @@
         <div>年</div>
     </div>
 
-    <img src="" class="image">
+    <img src="" class="image" id="myDiv">
 
 
     <div class="section">
@@ -127,7 +127,10 @@
                         }, 0)
                         cover.style.display = 'none';
                         final.style.display = 'none';
-                        window.location.reload()
+                        // window.location.reload()
+                        $("#myDiv").load(location.href + " #myDiv>*", "");
+
+
                     });
 
                 })
