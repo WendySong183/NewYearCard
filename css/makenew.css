@@ -197,10 +197,22 @@ p {
     animation: float 1.5s infinite;
 }
 
+.move::before:nth-child(1) {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    content: '↓';
+    display: block;
+    float: right;
+    -webkit-animation: float 1.5s infinite;
+    animation: float 1.5s infinite;
+}
+
 .right {
     position: absolute;
     top: 0;
     right: 0;
+    color: #a2423fbe;
 }
 
 
@@ -213,6 +225,10 @@ p {
     font-size: 14px;
     line-height: 20px;
     font-family: 'STFangsong';
+}
+
+.introduce li p {
+    color: #a2423fbe;
 }
 
 .introduce .on {
@@ -235,6 +251,7 @@ p {
     display: none;
     font-size: 18px;
     margin: 2% 0 0;
+    color: #a2423fbe;
 }
 
 

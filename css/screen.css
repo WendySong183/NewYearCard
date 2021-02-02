@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background: url(../image/screen.jpg) no-repeat;
+    background-size: cover;
+}
+
+ul {
+    width: 60%;
+    margin: 10% 20%;
+    background-color: pink;
+}
+
+li {
+    position: relative;
+    width: 100%;
+    background: url(../image/screenbg.png) no-repeat;
+    margin: 5% 0;
+}
+
+.pic {
+    float: left;
+    width: 20%;
+    /* height: 200px; */
+    background-color: #f0c888;
+    /* border-radius: 50%; */
+    text-align: center;
+    line-height: 200px;
+}
+
+.pic img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.content {
+    float: left;
+}

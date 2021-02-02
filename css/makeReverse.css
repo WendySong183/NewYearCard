@@ -85,7 +85,7 @@ li {
 .postmark {
     position: absolute;
     display: none;
-    top: 65%;
+    top: 40%;
     right: 0%;
     width: 30%;
     -webkit-animation: float ease-in-out 1.5s infinite;
@@ -106,11 +106,11 @@ li {
     position: relative;
     margin: 2% 10% 0;
     width: 80%;
-    height: 200px;
+    height: 350px;
 }
 
 .recipient {
-    height: 250px;
+    height: 350px;
 }
 
 .recipient li {
@@ -148,7 +148,7 @@ textarea {
     top: 0;
     left: 0;
     width: 100%;
-    height: 150px;
+    height: 250px;
     line-height: 50px;
     font-size: 20px;
     font-family: 'KaiTi';
@@ -198,7 +198,7 @@ textarea {
     border: none;
     /* margin: 3% 35%; */
     position: absolute;
-    top: 45%;
+    top: 60%;
     left: 35%;
     /* transform: translateX(-50%); */
     /* border-radius: 8%; */
@@ -261,7 +261,7 @@ input[type="checkbox"]:focus {
 .send {
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 30%;
     width: 50%;
     height: 24px;
     text-align: center;

@@ -66,7 +66,7 @@ li {
 
 .postmark {
     position: absolute;
-    top: 65%;
+    top: 40%;
     right: 0%;
     width: 30%;
     -webkit-animation: float ease-in-out 1.5s infinite;
@@ -83,11 +83,11 @@ li {
     position: relative;
     margin: 2% 10% 0;
     width: 80%;
-    height: 250px;
+    height: 300px;
 }
 
 .section {
-    height: 200px;
+    height: 300px;
 }
 
 .recipient li {

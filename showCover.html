@@ -112,39 +112,27 @@
                 $('.word').attr('src', wordsrc);
                 $('.bless').attr('src', blesssrc);
                 // window.location.reload()
-                $('.final').ready(function() {
-                    // console.log(1);
+                $('.alt').ready(function() {
+                    console.log(1);
 
-                    // html2canvas(cover, {
-                    //     scale: 2,
-                    //     width: 320,
-                    // }).then(canvas => {
-                    //     final.appendChild(canvas)
-                    //     setTimeout(() => {
-                    //         var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-                    //         console.log("base64编码数据：", imgUrl);
-                    //         img.src = imgUrl;
-                    //     }, 0)
-                    //     cover.style.display = 'none';
-                    //     final.style.display = 'none';
+                    html2canvas(cover, {
+                        scale: 2,
+                        width: 320,
+                    }).then(canvas => {
+                        final.appendChild(canvas)
+                        setTimeout(() => {
+                            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+                            console.log("base64编码数据：", imgUrl);
+                            img.src = imgUrl;
+                        }, 50)
+                        cover.style.display = 'none';
+                        final.style.display = 'none';
+                        // // window.location.reload()
+                        // $("#myDiv").load(location.href + " #myDiv>*", "");
 
-                    // });
-                    setTimeout(function() {
-                        html2canvas(cover, {
-                            scale: 2,
-                            width: 320,
-                        }).then(canvas => {
-                            final.appendChild(canvas)
-                            setTimeout(() => {
-                                var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-                                console.log("base64编码数据：", imgUrl);
-                                img.src = imgUrl;
-                            }, 0)
-                            cover.style.display = 'none';
-                            final.style.display = 'none';
 
-                        });
-                    }, 500);
+                    });
+
                 })
             });
         // window.location.reload()

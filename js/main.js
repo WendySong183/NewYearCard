@@ -68,7 +68,7 @@ $(document).ready(function() {
     });
 
     //slider-code
-    $('.trent-slider').css('height', $('.trent-slider').width() * 1.2);
+    $('.trent-slider').css('height', $('.trent-slider').width() * 1.22);
     tSetCss();
     //load bar 
     tStartLoadBar();
