@@ -63,7 +63,8 @@ body {
     display: block;
 }
 
-.left,
+
+/* .left,
 .right {
     position: absolute;
     top: 44%;
@@ -81,7 +82,7 @@ body {
 .right {
     left: 87%;
     background-color: #6b6b6d6b;
-}
+} */
 
 .choose ul {
     width: 100%;
@@ -185,6 +186,23 @@ p {
     font-family: 'STFangsong';
 }
 
+.move::before {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    content: '↓';
+    display: block;
+    float: left;
+    -webkit-animation: float 1.5s infinite;
+    animation: float 1.5s infinite;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 
 /* 简介 */
 
@@ -217,4 +235,37 @@ p {
     display: none;
     font-size: 18px;
     margin: 2% 0 0;
+}
+
+
+/* 动画2 */
+
+@-webkit-keyframes floatright {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatright {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }

@@ -13,7 +13,7 @@
         // 通过加载状态来显示进度条
         document.onreadystatechange = function() {
             if (document.readyState == "complete") {
-                $(".loader").delay(3000).fadeOut(2000);
+                $(".loader").delay(3000).fadeOut(500);
             }
         }
     </script>
@@ -146,7 +146,8 @@
         <div>新</div>
         <div>年</div>
     </div>
-    <p>点击更换祝福&风格</p>
+    <p class="move">点击更换祝福</p>
+    <p class="right move">点击更换风格</p>
     <div class="show">
         <ul>
             <!-- <div class="left">&lt</div>
@@ -346,7 +347,7 @@
             </li>
         </ul>
     </div>
-    <p>请点击文物选择贺卡主题</p>
+    <p class="move">请点击文物选择贺卡主题</p>
 
     <!-- <div class="color">
         <ul>
