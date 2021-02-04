@@ -107,6 +107,7 @@
                     $('ul').append("<li><div class='pic'><img src='image/s_" + parseInt(data.data[i].title / 10) + ".png'></div><div class='content'><p class='nickname'>微信网友：" + data.data[i].nickname + "</p><p class='blessing'>" + data.data[i].content + "</p></div></li>");
                     // }
                     i += 1;
+                    console.log(i);
 
                 };
                 getdetails()
@@ -117,7 +118,8 @@
                         $('ul').children('li').eq(i-6).hide()
                     }
                     if (i >= data.data.length) {
-                        clearInterval(timer);
+                       i=0;
+                       $('ul').children('li').hide()
                         
                     }
                     getdetails();

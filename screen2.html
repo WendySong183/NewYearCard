@@ -11,7 +11,7 @@
 
 <body>
     <ul>
-        <li>
+        <!-- <li>
             <div class="pic"> <img src="image/s_1.png" alt=""></div>
             <div class="content">
                 <p class="nickname">微信网友：123</p>
@@ -58,18 +58,18 @@
                 <p class="blessing">祝您在新的一年天天开心</p>
             </div>
 
-        </li>
+        </li> -->
 
     </ul>
 </body>
-<!-- <script>
+<script>
     $(function() {
         console.log(1);
         var i = 0;
-        var j=0;
-        var timer='null';
-        var picid="null";
-        var picSrc="null";
+        var j = 0;
+        var timer = 'null';
+        var picid = "null";
+        var picSrc = "null";
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
                 // a: cardinfo,
@@ -83,37 +83,55 @@
                 // picSrc='image/s_'+parseInt(data.data[0].title / 10)+'.png';
                 // console.log('p',picSrc);
                 // $('.pic').eq(j).attr('src',picSrc);
-                
+
                 function getdetails() {
-                    $('li').hide();
-                    $('.nickname').eq(j).text('微信网友：'+data.data[i].nickname);
-                    $('.nickname').eq(j + 1).text('微信网友：'+data.data[i + 1].nickname);
-                    $('.nickname').eq(j + 2).text('微信网友：'+data.data[i + 2].nickname);
-                    $('.blessing').eq(j).text(data.data[i].content);
-                    $('.blessing').eq(j + 1).text(data.data[i + 1].content);
-                    $('.blessing').eq(j + 2).text(data.data[i + 2].content);
-                    $('.pic img').eq(j).attr('src','image/s_'+parseInt(data.data[i].title / 10)+'.png');
-                    $('.pic img').eq(j+1).attr('src','image/s_'+parseInt(data.data[i+1].title / 10)+'.png');
-                    $('.pic img').eq(j+2).attr('src','image/s_'+parseInt(data.data[i+2].title / 10)+'.png');
-                    $('li').fadeIn(3000);
-                    i += 3;
-                   
+                    // $('li').hide();
+                    // $('.nickname').eq(j).text('微信网友：' + data.data[i].nickname);
+                    // // $('.nickname').eq(j + 1).text('微信网友：'+data.data[i + 1].nickname);
+                    // // $('.nickname').eq(j + 2).text('微信网友：'+data.data[i + 2].nickname);
+                    // $('.blessing').eq(j).text(data.data[i].content);
+                    // // $('.blessing').eq(j + 1).text(data.data[i + 1].content);
+                    // // $('.blessing').eq(j + 2).text(data.data[i + 2].content);
+                    // $('.pic img').eq(j).attr('src', 'image/s_' + parseInt(data.data[i].title / 10) + '.png');
+                    // // $('.pic img').eq(j+1).attr('src','image/s_'+parseInt(data.data[i+1].title / 10)+'.png');
+                    // // $('.pic img').eq(j+2).attr('src','image/s_'+parseInt(data.data[i+2].title / 10)+'.png');
+                    // $('li').fadeIn(3000);
+                    // i += 1;
+
+
+                    // for (var i = 0; i < data.data.length; i++) {
+
+                    //     dataID = data.data[i].id;
+
+                    //     imgId = 'image/a_' + data.data[i].title + '.png';
+                    $('ul').append("<li><div class='pic'><img src='image/s_" + parseInt(data.data[i].title / 10) + ".png'></div><div class='content'><p class='nickname'>微信网友：" + data.data[i].nickname + "</p><p class='blessing'>" + data.data[i].content + "</p></div></li>");
+                    // }
+                    i += 1;
+                    console.log(i);
+
                 };
                 getdetails()
                 console.log(data.data.length);
-                timer=setInterval(function(){
-                    if(i>=data.data.length){
-                    i=0;
-                }
-                getdetails();
-              
-                } , 10000);
-              
-                
+                timer = setInterval(function Interval() {
+                  
+                    if (i >= 6) {
+                        $('ul').children('li').eq(i-6).hide()
+                    }
+                    if (i >= data.data.length) {
+                       i=0;
+                       $('ul').children('li').hide();
+                       if (i >= 6) {
+                        $('ul').children('li').eq(i-6).hide();
+                    }
+                    }
+                    getdetails();
+
+                }, 1000);
+
+
             }
         )
     })
-</script> -->
-
+</script>
 
 </html>
