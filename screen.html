@@ -35,26 +35,33 @@
             </div>
 
         </li>
-     
+
     </ul>
 </body>
 <script>
     $(function() {
         console.log(1);
-        var i=0;
+        var i = 0;
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
                 // a: cardinfo,
             },
             function(data, status) {
                 console.log(data, status);
-                console.log(data.data[0].nickname);
-                console.log(data.data[1].nickname);
-                console.log(data.data[2].nickname);
-                $('.nickname').eq(i).replaceWith(data.data[i].nickname);
-                $('.nickname').eq(i+1).replaceWith(data.data[i+1].nickname);
-                $('.nickname').eq(i+2).replaceWith(data.data[i+2].nickname);
+                console.log(data.data[0].content);
+                console.log(data.data[i + 1].nickname);
+                console.log("i+1", i + 1);
 
+                setInterval(function() {
+                    // $('.nickname').eq(i).text(data.data[i].nickname);
+                    // $('.nickname').eq(i + 1).text(data.data[i + 1].nickname);
+                    // $('.nickname').eq(i + 2).text(data.data[i + 2].nickname);
+                    // $('.blessing').eq(i).text(data.data[i].content);
+                    // $('.blessing').eq(i + 1).text(data.data[i + 1].content);
+                    // $('.blessing').eq(i + 2).text(data.data[i + 2].content);
+                    i += 3;
+                    console.log(i);
+                }, 1000)
             }
         )
     })
