@@ -11,7 +11,7 @@
 
 <body>
     <ul>
-        <li>
+        <!-- <li>
             <div class="pic"> <img src="image/s_1.png" alt=""></div>
             <div class="content">
                 <p class="nickname">微信网友：123</p>
@@ -58,11 +58,11 @@
                 <p class="blessing">祝您在新的一年天天开心</p>
             </div>
 
-        </li>
+        </li> -->
 
     </ul>
 </body>
-<!-- <script>
+<script>
     $(function() {
         console.log(1);
         var i = 0;
@@ -104,33 +104,56 @@
                     //     dataID = data.data[i].id;
 
                     //     imgId = 'image/a_' + data.data[i].title + '.png';
-                    $('ul').append("<li><div class='pic'><img src='image/s_" + parseInt(data.data[i].title / 10) + ".png'></div><div class='content'><p class='nickname'>微信网友：" + data.data[i].nickname + "</p><p class='blessing'>" + data.data[i].content + "</p></div></li>");
+
+                    $('ul').append("<li id=" + i + "><div class='pic'><img src='image/s_" + parseInt(data.data[i].title / 10) + ".png'></div><div class='content'><p class='nickname'>微信网友：" + data.data[i].nickname + "</p><p class='blessing'>" + data.data[i].content + "</p></div></li>");
                     // }
+                    // $('li').hide();
                     i += 1;
                     console.log(i);
+                    // $('li').fadeIn(4000)
 
                 };
-                getdetails()
+                getdetails();
+                getdetails();
+                getdetails();
+
+                getdetails();
+
+                getdetails();
+
+                getdetails();
+
+                getdetails();
+
                 console.log(data.data.length);
                 timer = setInterval(function Interval() {
-                  
+
                     if (i >= 6) {
-                        $('ul').children('li').eq(i-6).hide()
+                        $('ul').hide();
+                        $('li').eq(j - 6).remove();
+                        console.log('aa', i - 6);
                     }
                     if (i >= data.data.length) {
-                       i=0;
-                       $('ul').children('li').hide()
-                        
+                        i = 0;
+                        $('ul').children('li').remove();
+                        getdetails();
+                        getdetails();
+                        getdetails();
+                        getdetails();
+                        getdetails();
+                        getdetails();
+
                     }
                     getdetails();
+                    $('ul').fadeIn(7000)
 
-                }, 1000);
+                }, 10000);
 
 
             }
         )
     })
-</script> -->
+</script>
 
 
 </html>
