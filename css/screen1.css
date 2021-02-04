@@ -16,6 +16,8 @@ body {
 }
 
 ul {
+    display: flex;
+    flex-wrap: wrap;
     width: 60%;
     margin: 10% 20%;
     /* background-color: pink; */
@@ -24,15 +26,16 @@ ul {
 li {
     display: flex;
     /* justify-content: space-around; */
-    width: 100%;
-    background: url(../image/screenbg.png) no-repeat;
-    background-size: cover;
-    margin: 5% 0;
+    width: 40%;
+    background: url(../image/bg.png) no-repeat;
+    /* background-size: cover; */
+    
+    margin: 3% 5%;
 }
 
 .pic {
     /* float: left; */
-    width: 12%;
+    width: 50%;
     /* height: 200px; */
     background-color: #f0c888;
     border-radius: 50%;
@@ -50,12 +53,12 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'STFangsong';
     color: #a2423fbe;
     font-weight: 700;
 }
 .nickname{
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 400;
 }
