@@ -42,6 +42,10 @@
     $(function() {
         console.log(1);
         var i = 0;
+        var j=0;
+        var timer='null';
+        var picid="null";
+        var picSrc="null";
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
                 // a: cardinfo,
@@ -51,17 +55,36 @@
                 console.log(data.data[0].content);
                 console.log(data.data[i + 1].nickname);
                 console.log("i+1", i + 1);
-
-                setInterval(function() {
-                    // $('.nickname').eq(i).text(data.data[i].nickname);
-                    // $('.nickname').eq(i + 1).text(data.data[i + 1].nickname);
-                    // $('.nickname').eq(i + 2).text(data.data[i + 2].nickname);
-                    // $('.blessing').eq(i).text(data.data[i].content);
-                    // $('.blessing').eq(i + 1).text(data.data[i + 1].content);
-                    // $('.blessing').eq(i + 2).text(data.data[i + 2].content);
-                    i += 3;
-                    console.log(i);
-                }, 1000)
+                // picid=parseInt(data.data[0].title / 10);
+                // picSrc='image/s_'+parseInt(data.data[0].title / 10)+'.png';
+                // console.log('p',picSrc);
+                // $('.pic').eq(j).attr('src',picSrc);
+                
+                function getdetails() {
+                    $('li').hide();
+                    $('.nickname').eq(j).text('微信网友：'+data.data[i].nickname);
+                    $('.nickname').eq(j + 1).text('微信网友：'+data.data[i + 1].nickname);
+                    $('.nickname').eq(j + 2).text('微信网友：'+data.data[i + 2].nickname);
+                    $('.blessing').eq(j).text(data.data[i].content);
+                    $('.blessing').eq(j + 1).text(data.data[i + 1].content);
+                    $('.blessing').eq(j + 2).text(data.data[i + 2].content);
+                    $('.pic img').eq(j).attr('src','image/s_'+parseInt(data.data[i].title / 10)+'.png');
+                    $('.pic img').eq(j+1).attr('src','image/s_'+parseInt(data.data[i+1].title / 10)+'.png');
+                    $('.pic img').eq(j+2).attr('src','image/s_'+parseInt(data.data[i+2].title / 10)+'.png');
+                    $('li').fadeIn(3000);
+                   
+                };
+                getdetails()
+                console.log(data.data.length);
+                timer=setInterval(function(){
+                    if(i>=data.data.length){
+                    i=0;
+                }
+                getdetails();
+                i += 3;
+                } , 10000);
+              
+                
             }
         )
     })
