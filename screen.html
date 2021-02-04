@@ -72,6 +72,7 @@
                     $('.pic img').eq(j+1).attr('src','image/s_'+parseInt(data.data[i+1].title / 10)+'.png');
                     $('.pic img').eq(j+2).attr('src','image/s_'+parseInt(data.data[i+2].title / 10)+'.png');
                     $('li').fadeIn(3000);
+                    i += 3;
                    
                 };
                 getdetails()
@@ -81,7 +82,7 @@
                     i=0;
                 }
                 getdetails();
-                i += 3;
+              
                 } , 10000);
               
                 
