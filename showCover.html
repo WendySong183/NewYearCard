@@ -111,29 +111,23 @@
                 $('.shade').attr('src', shadesrc);
                 $('.word').attr('src', wordsrc);
                 $('.bless').attr('src', blesssrc);
-                // window.location.reload()
-                // $('.alt').ready(function() {
-                //     console.log(1);
 
-                //     html2canvas(cover, {
-                //         scale: 2,
-                //         width: 320,
-                //     }).then(canvas => {
-                //         final.appendChild(canvas)
-                //         setTimeout(() => {
-                //             var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-                //             console.log("base64编码数据：", imgUrl);
-                //             img.src = imgUrl;
-                //         }, 50)
-                //         cover.style.display = 'none';
-                //         final.style.display = 'none';
-                //         // // window.location.reload()
-                //         // $("#myDiv").load(location.href + " #myDiv>*", "");
+                function detect(){
+                    if(!($('.relic')[0].complete&&
+                        $('.shade')[0].complete&&
+                        $('.word')[0].complete&&
+                        $('.bless')[0].complete
+                    )){
+                        setTimeout(() => {
+                            detect()
+                        }, 100);
+                    }else{
+                        createPost()
+                    }
+                }
 
-
-                //     });
-setTimeout(function(){
-    html2canvas(cover, {
+                function createPost(){
+                    html2canvas(cover, {
                         scale: 2,
                         width: 320,
                     }).then(canvas => {
@@ -142,11 +136,11 @@ setTimeout(function(){
                             var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
                             console.log("base64编码数据：", imgUrl);
                             img.src = imgUrl;
-                        }, 50)
+                        }, 0)
                         cover.style.display = 'none';
                         final.style.display = 'none';
-},100)
-                })
+                    });
+                }
             });
         // window.location.reload()
     })

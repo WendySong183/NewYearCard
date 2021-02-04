@@ -12,30 +12,48 @@
 <body>
     <ul>
         <li>
-            <div class="pic"> <img src="image/aa_1.png" alt=""></div>
+            <div class="pic"> <img src="image/s_1.png" alt=""></div>
             <div class="content">
-                <p>微信网友：123</p>
-                <p>祝您在新的一年天天开心</p>
+                <p class="nickname">微信网友：123</p>
+                <p class="blessing">祝您在新的一年天天开心</p>
             </div>
 
         </li>
-        <!-- <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li> -->
+        <li>
+            <div class="pic"> <img src="image/s_1.png" alt=""></div>
+            <div class="content">
+                <p class="nickname">微信网友：123</p>
+                <p class="blessing">祝您在新的一年天天开心</p>
+            </div>
+
+        </li>
+        <li>
+            <div class="pic"> <img src="image/s_1.png" alt=""></div>
+            <div class="content">
+                <p class="nickname">微信网友：123</p>
+                <p class="blessing">祝您在新的一年天天开心</p>
+            </div>
+
+        </li>
+     
     </ul>
 </body>
 <script>
     $(function() {
         console.log(1);
+        var i=0;
 
         $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
                 // a: cardinfo,
             },
             function(data, status) {
                 console.log(data, status);
-                console.log(111);
+                console.log(data.data[0].nickname);
+                console.log(data.data[1].nickname);
+                console.log(data.data[2].nickname);
+                $('.nickname').eq(i).replaceWith(data.data[i].nickname);
+                $('.nickname').eq(i+1).replaceWith(data.data[i+1].nickname);
+                $('.nickname').eq(i+2).replaceWith(data.data[i+2].nickname);
 
             }
         )
