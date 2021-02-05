@@ -70,88 +70,78 @@
         var timer = 'null';
         var picid = "null";
         var picSrc = "null";
+        var newdata = 'null';
 
-        $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
-                // a: cardinfo,
-            },
-            function(data, status) {
-                console.log(data, status);
-                console.log(data.data[0].content);
-                console.log(data.data[i + 1].nickname);
-                console.log("i+1", i + 1);
-                // picid=parseInt(data.data[0].title / 10);
-                // picSrc='image/s_'+parseInt(data.data[0].title / 10)+'.png';
-                // console.log('p',picSrc);
-                // $('.pic').eq(j).attr('src',picSrc);
+        function post() {
+            $.post("https://wx.weibenh5.com/2020/Dec/yearCard/api/down.php?a=cardinfo", {
+                    // a: cardinfo,
+                },
+                function(data, status) {
+                    // console.log(data, status);
+                    // console.log(data.data[0].content);
+                    // console.log(data.data[i + 1].nickname);
+                    // console.log("i+1", i + 1);
+                    newdata = data;
+                    picSrc = 'image/s_' +
+                        parseInt(newdata.data[i].title / 10) +
+                        '.png';
+                    // console.log('里面', newdata);
 
-                function getdetails() {
-                    // $('li').hide();
-                    // $('.nickname').eq(j).text('微信网友：' + data.data[i].nickname);
-                    // // $('.nickname').eq(j + 1).text('微信网友：'+data.data[i + 1].nickname);
-                    // // $('.nickname').eq(j + 2).text('微信网友：'+data.data[i + 2].nickname);
-                    // $('.blessing').eq(j).text(data.data[i].content);
-                    // // $('.blessing').eq(j + 1).text(data.data[i + 1].content);
-                    // // $('.blessing').eq(j + 2).text(data.data[i + 2].content);
-                    // $('.pic img').eq(j).attr('src', 'image/s_' + parseInt(data.data[i].title / 10) + '.png');
-                    // // $('.pic img').eq(j+1).attr('src','image/s_'+parseInt(data.data[i+1].title / 10)+'.png');
-                    // // $('.pic img').eq(j+2).attr('src','image/s_'+parseInt(data.data[i+2].title / 10)+'.png');
-                    // $('li').fadeIn(3000);
-                    // i += 1;
+                }
 
+            )
+        }
+        post();
+        setTimeout(function() {
+            console.log('外面2s', picSrc)
+        }, 1000);
 
-                    // for (var i = 0; i < data.data.length; i++) {
+        function getdetails() {
+            $('ul').append("<li id=" + i +
+                "><div class='pic'><img src='image/s_" +
+                parseInt(newdata.data[i].title / 10) +
+                ".png'></div><div class='content'><p class='nickname'>微信网友：" +
+                newdata.data[i].nickname +
+                "</p><p class='blessing'>" +
+                newdata.data[i].content +
+                "</p></div></li>");
+            // $('ul').append("<li><div class='pic'><img src='" +
+            //     picSrc+
+            //     "'></div></li>");
+            i += 1;
+            console.log(i);
+        };
+        setTimeout(getdetails, 2000);
+        setTimeout(getdetails, 2000);
+        setTimeout(getdetails, 2000);
+        setTimeout(getdetails, 2000);
+        setTimeout(getdetails, 2000);
+        setTimeout(getdetails, 2000);
+        // console.log(newdata.data.length);
+        setTimeout(setInterval(function Interval() {
 
-                    //     dataID = data.data[i].id;
-
-                    //     imgId = 'image/a_' + data.data[i].title + '.png';
-
-                    $('ul').append("<li id=" + i + "><div class='pic'><img src='image/s_" + parseInt(data.data[i].title / 10) + ".png'></div><div class='content'><p class='nickname'>微信网友：" + data.data[i].nickname + "</p><p class='blessing'>" + data.data[i].content + "</p></div></li>");
-                    // }
-                    // $('li').hide();
-                    i += 1;
-                    console.log(i);
-                    // $('li').fadeIn(4000)
-
-                };
-                getdetails();
-                getdetails();
-                getdetails();
-
-                getdetails();
-
-                getdetails();
-
-                getdetails();
-
-                getdetails();
-
-                console.log(data.data.length);
-                timer = setInterval(function Interval() {
-
-                    if (i >= 6) {
-                        $('ul').hide();
-                        $('li').eq(j - 6).remove();
-                        console.log('aa', i - 6);
-                    }
-                    if (i >= data.data.length) {
-                        i = 0;
-                        $('ul').children('li').remove();
-                        getdetails();
-                        getdetails();
-                        getdetails();
-                        getdetails();
-                        getdetails();
-                        getdetails();
-
-                    }
-                    getdetails();
-                    $('ul').fadeIn(7000)
-
-                }, 10000);
-
-
+            if (i >= 6) {
+                $('ul').hide();
+                $('li').eq(j - 6).remove();
+                console.log('aa', i - 6);
             }
-        )
+            if (i >= newdata.data.length) {
+                i = 0;
+                $('ul').children('li').remove();
+                post();
+                // $('ul').children('li').remove();
+                setTimeout(getdetails, 2000);
+                setTimeout(getdetails, 2000);
+                setTimeout(getdetails, 2000);
+                setTimeout(getdetails, 2000);
+                setTimeout(getdetails, 2000);
+                // setTimeout(getdetails, 2000);
+            }
+            setTimeout(getdetails, 2000);
+            $('ul').fadeIn(7000)
+        }, 10000), 2000);
+        //     }
+        // )
     })
 </script>
 

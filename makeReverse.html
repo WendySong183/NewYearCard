@@ -178,6 +178,7 @@
                     console.log('e', data.info);
                     if (data.error == 1) {
                         alert(data.info);
+                        window.location.href = "mycard.html";
                     } else {
                         window.location.href = "showCover.html?" + 'cardId=' + data.data.id;
                     }
