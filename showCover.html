@@ -60,7 +60,9 @@
 </body>
 <script>
     var cardId = location.search.substr(1).split('=')[1];
-    var url = 'https://wx.weibenh5.com/2020/Dec/yearCard/newYearCard/showReverse.html?cardId=' + cardId;
+    var lourl=location.href.split('/show')[0];
+    // console.log('s',location.href.split('/show')[0]);
+    var url = lourl+'/showReverse.html?cardId=' + cardId;
     console.log(url);
 
     jQuery('.canvas').qrcode({
